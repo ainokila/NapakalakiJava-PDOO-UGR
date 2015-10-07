@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class BadConsequence {
     
-    private String text; // Representa lo que dice un Mal Rollo.
+    private String text=""; // Representa lo que dice un Mal Rollo.
     private int levels; //Representa el numero de niveles que se pierden.
     private int nVisibleTreasures;  //Numero de tesoros visibles que se pierden.
     private int nHiddenTreasures; //Numero de tesoros ocultos que se pierden.
@@ -89,11 +89,11 @@ public class BadConsequence {
     }
     
      public String toString(){
-          
-        String solucion = "Text = " + text + " levels = " + Integer.toString(levels)
-                + " Visible Treasures = " + Integer.toString(nVisibleTreasures) 
-                + " Hidden Treasures = " + Integer.toString(nHiddenTreasures)
-                + " Death = " + death + "Specific Hidden Treasures = " + auxiliarString(specificHiddenTreasures)
+
+        String solucion = "\nTextoConsequence-> = " + text + " levels = " + Integer.toString(levels)
+                + " Visible Treasures = " + Integer.toString(nVisibleTreasures)+"\n" 
+                + " Hidden Treasures = " + Integer.toString(nHiddenTreasures)+"\n"
+                + " Death = " + death + " Specific Hidden Treasures = " + auxiliarString(specificHiddenTreasures)+"\n"
                 + " Specific Visible Treasures = " + auxiliarString(specificVisibleTreasures);
         
         return solucion;
