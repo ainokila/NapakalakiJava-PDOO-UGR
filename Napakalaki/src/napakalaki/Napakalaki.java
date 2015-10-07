@@ -7,7 +7,7 @@ package napakalaki;
 
 /**
  *
- * @author jorge
+ * @author  Jorge G. y Cristian V.
  */
 public class Napakalaki {
 

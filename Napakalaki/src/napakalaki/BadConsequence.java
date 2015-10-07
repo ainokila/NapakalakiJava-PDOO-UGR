@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author jorge
+ * @author Jorge G. y Cristian V.
  */
 public class BadConsequence {
     
