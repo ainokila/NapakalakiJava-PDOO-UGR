@@ -90,11 +90,11 @@ public class BadConsequence {
     
      public String toString(){
 
-        String solucion = "\nTextoConsequence-> = " + text + " levels = " + Integer.toString(levels)
-                + " Visible Treasures = " + Integer.toString(nVisibleTreasures)+"\n" 
-                + " Hidden Treasures = " + Integer.toString(nHiddenTreasures)+"\n"
-                + " Death = " + death + " Specific Hidden Treasures = " + auxiliarString(specificHiddenTreasures)+"\n"
-                + " Specific Visible Treasures = " + auxiliarString(specificVisibleTreasures);
+        String solucion = "\nTextoConsequence-> = " + text + "\nlevels = " + Integer.toString(levels)+"\n"
+                + "Visible Treasures = " + Integer.toString(nVisibleTreasures)+"\n" 
+                + "Hidden Treasures = " + Integer.toString(nHiddenTreasures)+"\n"
+                + "Death = " + death + "\n\nSpecific Hidden Treasures = " + auxiliarString(specificHiddenTreasures)+"\n"
+                + "Specific Visible Treasures = " + auxiliarString(specificVisibleTreasures);
         
         return solucion;
       }
