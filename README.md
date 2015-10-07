@@ -1,2 +1,0 @@
-# PDOO
-Practicas PDOO
