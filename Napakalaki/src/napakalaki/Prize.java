@@ -15,15 +15,18 @@ public class Prize {
       private int level;
       
       public Prize(int treasure, int level){
+          
           this.treasure = treasure;
           this.level = level;
       }
       
       public int getTreasures(){
+          
           return treasure;
       }
     
       public int getLevel(){
+          
           return level;
       }
       
