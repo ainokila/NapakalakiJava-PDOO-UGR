@@ -20,7 +20,7 @@ public enum TreasureKind {
     String solucion ="";
     switch (this) {
         
-    }
+    
             case ARMOR :  solucion = "ARMOR";
                           break;
             case ONEHAND :  solucion = "ONEHAND";
@@ -33,7 +33,7 @@ public enum TreasureKind {
                           break;
             default: solucion = "Invalid TreasureKind";
                      break;
-    
+    }
     return solucion;
 }
 
