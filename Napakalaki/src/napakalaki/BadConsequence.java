@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package napakalaki;
+import java.lang.*;
 
 import java.util.ArrayList;
 
@@ -75,6 +76,28 @@ public class BadConsequence {
         return death;
     }
     
+    private String auxiliarString(ArrayList<TreasureKind> datos){
+        
+        String solucion="" ; 
+        
+        for (TreasureKind uno: datos){
+            
+            solucion += uno.toString() + "\t";
+        }
+        return solucion;
+        
+    }
+    
+     public String toString(){
+          
+        String solucion = "Text = " + text + " levels = " + Integer.toString(levels)
+                + " Visible Treasures = " + Integer.toString(nVisibleTreasures) 
+                + " Hidden Treasures = " + Integer.toString(nHiddenTreasures)
+                + " Death = " + death + "Specific Hidden Treasures = " + auxiliarString(specificHiddenTreasures)
+                + " Specific Visible Treasures = " + auxiliarString(specificVisibleTreasures);
+        
+        return solucion;
+      }
     
     
     

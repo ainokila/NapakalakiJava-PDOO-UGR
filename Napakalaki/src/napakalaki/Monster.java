@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package napakalaki;
+import java.lang.*;
 
 /**
  *
@@ -33,6 +34,15 @@ public class Monster {
         return combatLevel;
     }
     
+     public String toString(){
+          
+        String solucion = "Name = " + name + " combatLevel = " + Integer.toString(combatLevel) 
+                + " Bad Consequence = " + badConse.toString() + " Price = " + price.toString() + "\n";
+        return solucion ;
+        
+      }
+     
+     
    
     
 }
