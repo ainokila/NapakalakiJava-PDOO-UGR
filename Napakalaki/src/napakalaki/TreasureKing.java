@@ -9,13 +9,7 @@ package napakalaki;
  *
  * @author jorge
  */
-public class Napakalaki {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-      }
-    
+public enum TreasureKing {
+     
+    ARMOR, ONEHAND, BOTHHANDS, HELMET, SHOES
 }
