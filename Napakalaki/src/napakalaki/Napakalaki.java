@@ -134,7 +134,7 @@ public class Napakalaki {
             
            if( iterador.getCombatLevel() > 10)
                System.out.print(iterador.toString()) ;
-               System.out.print("\n\n");
+               System.out.print("\n");
         }
          
        System.out.print("Tienen un mal rollo que implica perdida de niveles: \n");
@@ -143,8 +143,8 @@ public class Napakalaki {
             
            if( iterador.getBadConsequence().getLevels() > 0)
                System.out.print(iterador.toString()) ;
-               System.out.print("\n\n");
-        }
+               System.out.print("\n");
+               }
        
        System.out.print("Tienen un buen rollo que implica ganancia de niveles superior a 1: \n");
        
@@ -152,7 +152,7 @@ public class Napakalaki {
             
            if( iterador.getPrice().getLevel() > 1)
                System.out.print(iterador.toString()) ;
-               System.out.print("\n\n");
+               System.out.print("\n");
         }
        
         System.out.print("Tienen un mal rollo que implica perdida especifica de Treasures 'ONEHAND' , ya sean visibles o no: \n");
@@ -164,11 +164,18 @@ public class Napakalaki {
             auxiliarHidden = iterador.getBadConsequence().getHiddenTreasures();
                 
                 for(TreasureKind uno : auxiliarVisibles){
-                    if (uno.ONEHAND == "ONEHAND")
-                        }
+                    if (uno.toString() == "ONEHAND")
+                        System.out.print(iterador.toString());
+                        System.out.print("\n");
+                 }
+                
+                for(TreasureKind dos : auxiliarHidden){
+                    if (dos.toString() == "ONEHAND")
+                        System.out.print(iterador.toString());
+                        System.out.print("\n");
+                }
             
-               System.out.print(iterador.toString()) ;
-               System.out.print("\n\n");
+               
         }
         
         
