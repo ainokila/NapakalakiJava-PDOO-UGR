@@ -5,6 +5,8 @@
  */
 package napakalaki;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author  Jorge G. y Cristian V.
@@ -16,12 +18,9 @@ public class Napakalaki {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ArrayList<Monster> monstruos = new ArrayList();
+      
         
-        BadConsequence bc = new BadConsequence ("Malo", 5, 5, 5);
-        Prize price = new Prize(3,3);
-        Monster feo = new Monster("Prueba", 10,  bc, price);
-        
-        System.out.println(feo.toString());
         
         
       }
