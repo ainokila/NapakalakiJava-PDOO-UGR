@@ -128,8 +128,48 @@ public class Napakalaki {
        monstruos.add(new Monster("Bicéfalo" ,20 , badConsequence19, prize19));
        
        
-         
+       System.out.print("Tienen un nivel superior a 10: \n");
        
+       for (Monster iterador: monstruos){
+            
+           if( iterador.getCombatLevel() > 10)
+               System.out.print(iterador.toString()) ;
+               System.out.print("\n\n");
+        }
+         
+       System.out.print("Tienen un mal rollo que implica perdida de niveles: \n");
+       
+       for (Monster iterador: monstruos){
+            
+           if( iterador.getBadConsequence().getLevels() > 0)
+               System.out.print(iterador.toString()) ;
+               System.out.print("\n\n");
+        }
+       
+       System.out.print("Tienen un buen rollo que implica ganancia de niveles superior a 1: \n");
+       
+       for (Monster iterador: monstruos){
+            
+           if( iterador.getPrice().getLevel() > 1)
+               System.out.print(iterador.toString()) ;
+               System.out.print("\n\n");
+        }
+       
+        System.out.print("Tienen un mal rollo que implica perdida especifica de Treasures 'ONEHAND' , ya sean visibles o no: \n");
+       
+       for (Monster iterador: monstruos){
+            ArrayList<TreasureKind> auxiliarVisibles, auxiliarHidden; 
+            
+            auxiliarVisibles = iterador.getBadConsequence().getVisibleTreasures();
+            auxiliarHidden = iterador.getBadConsequence().getHiddenTreasures();
+                
+                for(TreasureKind uno : auxiliarVisibles){
+                    if (uno.ONEHAND == "ONEHAND")
+                        }
+            
+               System.out.print(iterador.toString()) ;
+               System.out.print("\n\n");
+        }
         
         
       }

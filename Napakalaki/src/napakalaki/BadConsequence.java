@@ -76,6 +76,16 @@ public class BadConsequence {
         return death;
     }
     
+    public ArrayList<TreasureKind> getVisibleTreasures(){
+       
+        return specificVisibleTreasures;
+    } 
+    
+    public ArrayList<TreasureKind> getHiddenTreasures(){
+       
+        return specificHiddenTreasures;
+    } 
+    
     private String auxiliarString(ArrayList<TreasureKind> datos){
         
         String solucion="" ; 
@@ -90,10 +100,10 @@ public class BadConsequence {
     
      public String toString(){
 
-        String solucion = "\nTextoConsequence-> = " + text + "\nlevels = " + Integer.toString(levels)+"\n"
+        String solucion = " " + text + "\nlevels = " + Integer.toString(levels)+"\n"
                 + "Visible Treasures = " + Integer.toString(nVisibleTreasures)+"\n" 
                 + "Hidden Treasures = " + Integer.toString(nHiddenTreasures)+"\n"
-                + "Death = " + death + "\n\nSpecific Hidden Treasures = " + auxiliarString(specificHiddenTreasures)+"\n"
+                + "Death = " + death + "\nSpecific Hidden Treasures = " + auxiliarString(specificHiddenTreasures)+"\n"
                 + "Specific Visible Treasures = " + auxiliarString(specificVisibleTreasures);
         
         return solucion;

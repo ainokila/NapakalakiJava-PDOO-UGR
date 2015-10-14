@@ -33,7 +33,7 @@ public class Prize {
       
       public String toString(){
           
-        String solucion = "\nTreasures = " + Integer.toString(treasures) + " levels = " + Integer.toString(level);
+        String solucion = "Treasures = " + Integer.toString(treasures) + " levels = " + Integer.toString(level);
         return solucion ;
         
       }

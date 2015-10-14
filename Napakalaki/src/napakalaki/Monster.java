@@ -34,6 +34,15 @@ public class Monster {
         return combatLevel;
     }
     
+    public BadConsequence getBadConsequence() {
+        return badConse;
+    }
+    
+    public Prize getPrice() {
+        return price;
+    }
+    
+    
      public String toString(){
           
         String solucion = "Name = " + name + " | CombatLevel = " + Integer.toString(combatLevel) 
