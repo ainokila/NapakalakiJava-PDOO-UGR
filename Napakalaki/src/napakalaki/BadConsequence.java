@@ -97,7 +97,7 @@ public class BadConsequence {
         return solucion;
         
     }
-    
+     @Override
      public String toString(){
 
         String solucion = " " + text + "\nlevels = " + Integer.toString(levels)+"\n"

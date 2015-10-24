@@ -42,7 +42,7 @@ public class Monster {
         return price;
     }
     
-    
+    @Override
      public String toString(){
           
         String solucion = "Name = " + name + " | CombatLevel = " + Integer.toString(combatLevel) 
