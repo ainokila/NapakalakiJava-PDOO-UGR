@@ -9,6 +9,6 @@ package napakalaki;
  *
  * @author ainokila
  */
-public class Napakalaki {
+public class Dice {
     
 }
