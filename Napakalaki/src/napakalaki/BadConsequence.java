@@ -109,6 +109,17 @@ public class BadConsequence {
         return solucion;
       }
     
+     public boolean isEmpty(){
+         
+                
+         boolean solucion = false;
+         if(text == "" && levels == 0 && nVisibleTreasures == 0 && nHiddenTreasures == 0 && death == false){
+                    solucion = true;
+         }
+        
+      return solucion;
+
+     }
     
     
 }
