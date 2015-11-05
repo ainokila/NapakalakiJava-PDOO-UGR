@@ -38,9 +38,14 @@ public class Monster {
         return badConse;
     }
     
-    public Prize getPrice() {
-        return price;
+    public int getLevelsGained() {
+        return price.getLevel();
     }
+    
+    public int getTreasuresGainer(){
+        return price.getTreasures();
+    }
+    
     
     @Override
      public String toString(){
