@@ -37,7 +37,7 @@ public static Napakalaki getInstance() {
 private void initPlayers(ArrayList<String> names){
     
 }
-private Player nextPlayer(){
+/*private Player nextPlayer(){
     
 }
 private boolean nextTurnAllowed(){
@@ -50,7 +50,7 @@ private void setEnemies(){
 public CombatResult developCombat(){
     
     
-}
+}*/
 public void discardVisibleTreasures(ArrayList<Treasure> treasures){
     
 }
@@ -71,11 +71,11 @@ public Player getCurrentPlayer(){
 public Monster getCurrentMonster(){
        return currentMonster;    
 }
-public boolean nextTurn(){
+/*public boolean nextTurn(){
     
 }
 public boolean endOfGame(CombatResult result){
     
-}
+}*/
     
 }

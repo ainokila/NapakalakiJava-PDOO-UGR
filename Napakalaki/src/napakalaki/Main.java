@@ -150,7 +150,7 @@ public class Main {
        
        for (Monster iterador: monstruos){
             
-           if( iterador.getPrice().getLevel() > 1)
+           if( iterador.getLevelsGained() > 1)
                System.out.print(iterador.toString()) ;
                System.out.print("\n");
         }

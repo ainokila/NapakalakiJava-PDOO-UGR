@@ -19,6 +19,7 @@ public class BadConsequence {
     private int nVisibleTreasures;  //Numero de tesoros visibles que se pierden.
     private int nHiddenTreasures; //Numero de tesoros ocultos que se pierden.
     private boolean death; //Representa un Mal Rollo de tipo Muerte.
+    private static final int MAXTREASURES = 10;
     
     private ArrayList<TreasureKind> specificHiddenTreasures = new ArrayList();
     private ArrayList<TreasureKind> specificVisibleTreasures = new ArrayList();
@@ -109,6 +110,17 @@ public class BadConsequence {
         return solucion;
       }
     
+     public boolean isEmpty(){
+         
+                
+         boolean solucion = false;
+         if(text == "" && levels == 0 && nVisibleTreasures == 0 && nHiddenTreasures == 0 && death == false){
+                    solucion = true;
+         }
+        
+      return solucion;
+
+     }
     
     
 }
