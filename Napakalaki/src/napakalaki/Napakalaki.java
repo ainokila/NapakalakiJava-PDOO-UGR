@@ -71,11 +71,11 @@ public Player getCurrentPlayer(){
 public Monster getCurrentMonster(){
        return currentMonster;    
 }
-/*public boolean nextTurn(){
-    
+public boolean nextTurn(){
+    return true;
 }
 public boolean endOfGame(CombatResult result){
-    
-}*/
+    return true;
+}
     
 }

@@ -68,8 +68,8 @@ public class Player {
  
  private void incrementLevels(int i){
      
-     if(level+i >= 10){
-        level = 10;
+     if(level+i >= MAXLEVEL){
+        level = MAXLEVEL;
      }else{
         level = level + i;
      }
