@@ -29,6 +29,19 @@ public class Player {
      name = nombre;
  }
  
+ 
+ public boolean isDeath(){
+     
+    boolean solucion= false;
+    
+    if(dead){
+        solucion = true;
+    }
+    
+    return solucion;
+ }
+ 
+ 
  public String getName(){
      
      return name;
@@ -76,8 +89,8 @@ public class Player {
  }
  private void decrementLevels(int i){
       
-     if(level-i <= 0){
-        level = 0;
+     if(level-i <= 1){
+        level = 1;
      }else{
         level = level - i;
      }
@@ -91,7 +104,7 @@ public class Player {
  
  private void dieIfNoTreasures(){
      
-     if(hiddenTreasures.size() == 0 && visibleTreasures.size() == 0){
+     if(hiddenTreasures.isEmpty()  && visibleTreasures.isEmpty()){
          
          dead = true;
          
@@ -101,17 +114,14 @@ public class Player {
  
  private boolean validState(){
      
-     boolean solucion=false;
+     boolean solucion=true;
      
-     if(pendingBadConsequence.isEmpty() && hiddenTreasures.size() == 4){
+     if(!(pendingBadConsequence.isEmpty())&& hiddenTreasures.size() < 4){
          
          solucion = false;
      }
-     else{
-         solucion = false;
-     }
      
-    return solucion;
+     return solucion;
     
  }
  
