@@ -72,8 +72,7 @@ public class Player {
  
  private int getCombatLevel(){
      
-        int combatLevel=0;
-        combatLevel = getLevelTreasures();
+        int combatLevel = getLevelTreasures();
         combatLevel = combatLevel + level;
      
     return combatLevel;
