@@ -114,7 +114,7 @@ public class BadConsequence {
          
                 
          boolean solucion = false;
-         if(text == "" && levels == 0 && nVisibleTreasures == 0 && nHiddenTreasures == 0 && death == false && specificHiddenTreasures == new ArrayList(Arrays.asList()) && specificVisibleTreasures == new ArrayList(Arrays.asList())){
+         if(text == "" && levels == 0 && nVisibleTreasures == 0 && nHiddenTreasures == 0 && death == false && specificHiddenTreasures.size() == 0 && specificVisibleTreasures.size() == 0){
                     solucion = true;
          }
         
