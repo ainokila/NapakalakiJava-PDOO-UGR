@@ -111,7 +111,7 @@ public class Player {
      
  }
  
- private boolean validState(){
+ public boolean validState(){
      
      boolean solucion=true;
      
@@ -174,7 +174,14 @@ public class Player {
     return solucion;
   }
          
-          
+  public Treasure giveMeATreasure(){
+      
+      int posAleatorio;
+      
+      posAleatorio = (int) Math.random()*hiddenTreasures.size();
+      
+      return hiddenTreasures.get(posAleatorio);
+  }    
 }
 
 

@@ -13,4 +13,23 @@ public enum CombatResult {
     
     WINGAME, WIN, LOSE;
     
+    
+    @Override
+    public String toString(){
+    String solucion ="";
+    switch (this) {
+        
+    
+            case WINGAME :  solucion = "WINGAME";
+                          break;
+            case WIN :  solucion = "WIN";
+                          break;
+            case LOSE:  solucion = "LOSE";
+                          break;
+           default: solucion = "Invalid CombatResult";
+                     break;
+    }
+    return solucion;
+}
+    
 }

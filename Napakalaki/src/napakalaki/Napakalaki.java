@@ -5,6 +5,7 @@
  */
 package napakalaki;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -35,22 +36,61 @@ public static Napakalaki getInstance() {
 }
         
 private void initPlayers(ArrayList<String> names){
-    
+
+   for(String iterador : names){
+       players.add(new Player(iterador));
+   }
 }
-/*private Player nextPlayer(){
-    
-}
-private boolean nextTurnAllowed(){
-   
-}
-private void setEnemies(){
-    
+private Player nextPlayer(){
+        Player aux;
+        int posicion;
+    if (currentPlayer == null){
+          int numeroJugadores = players.size() - 1;
+          posicion = (int) Math.random()*numeroJugadores;
+          
+          aux = players.get(posicion);
+    }
+    else{
+        posicion = players.indexOf(currentPlayer);
+        posicion++;
+        if(posicion >= players.size()){
+                aux = players.get(0);
+        }else{
+                aux = players.get(posicion);
+        }
+                
+    }
+    return aux;
 }
 
+private boolean nextTurnAllowed(){
+         
+    return currentPlayer.validState();
+}
+
+
+private void setEnemies(){
+        
+    int posAleatorio;
+        
+    for(Player iterador : players){
+        
+       posAleatorio = (int) Math.random()*players.size();
+       
+       while (players.get(posAleatorio) == iterador){
+           
+           posAleatorio = (int) Math.random()*players.size();
+       }
+        
+       iterador.setEnemyPlayer(players.get(posAleatorio));
+    
+    }
+}
+/*
 public CombatResult developCombat(){
     
     
-}*/
+}
 public void discardVisibleTreasures(ArrayList<Treasure> treasures){
     
 }
@@ -64,6 +104,10 @@ public void makeTreasuresVisible(ArrayList<Treasure> treasures){
 public void initGame(ArrayList<String> player){
     
 }
+
+public boolean nextTurn(){
+    return true;
+}*/
 public Player getCurrentPlayer(){
     return currentPlayer;
 
@@ -71,11 +115,15 @@ public Player getCurrentPlayer(){
 public Monster getCurrentMonster(){
        return currentMonster;    
 }
-public boolean nextTurn(){
-    return true;
-}
+
 public boolean endOfGame(CombatResult result){
-    return true;
-}
+        
+        boolean resultado=false;
+    if(result.toString() == "WINGAME"){
+            resultado = true;
+    }
+    
+    return resultado;
+ }
     
 }
