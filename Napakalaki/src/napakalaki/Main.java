@@ -58,7 +58,7 @@ public class Main {
        monstruos.add(new Monster("H.P. Munchcraft", 6 , badConsequence6, prize6));
        
        //Monstruo 7    ******************************************************************
-       BadConsequence badConsequence7 = new BadConsequence("Sientes bichos bajo la ropa. Descarta tu armadura visibl.e", 0 ,new ArrayList(Arrays.asList(TreasureKind.ARMOR)),
+       BadConsequence badConsequence7 = new BadConsequence("Sientes bichos bajo la ropa. Descarta tu armadura visible.", 0 ,new ArrayList(Arrays.asList(TreasureKind.ARMOR)),
                new ArrayList(Arrays.asList())); 
        Prize prize7 = new Prize(1,1);
        monstruos.add(new Monster("Bichgooth", 2 , badConsequence7, prize7));
