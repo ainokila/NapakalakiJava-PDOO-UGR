@@ -1,4 +1,4 @@
-/*
+//*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -111,7 +111,7 @@ public class Player {
      
  }
  
- public boolean validState(){
+ private boolean validState(){
      
      boolean solucion=true;
      
@@ -173,17 +173,115 @@ public class Player {
       
     return solucion;
   }
+  
+  private boolean canMakeVisibleTreasure(Treasure t){
+      
+      boolean solucion=true;
+      
+      for(Treasure iterador  : visibleTreasures){
+          int contadorOneHand = 0;
+          
+          if(iterador.getType() == TreasureKind.ONEHAND){
+              contadorOneHand++;
+          }
+          if(!(contadorOneHand<2 || t.getType()==TreasureKind.ONEHAND)){
+              
+                if(iterador.getType() == t.getType()){
+                solucion = false;
+                }
+                if(iterador.getType()==TreasureKind.BOTHHANDS && t.getType() == TreasureKind.ONEHAND  ){
+                    solucion = false;
+                }
+                if(iterador.getType()==TreasureKind.ONEHAND && t.getType() == TreasureKind.BOTHHANDS ){
+                    solucion = false;
+                }
+          }
+          
+          
+      }
+      
+      return solucion;
+  }
+  
+  private void applyPrize(Monster m){
+      this.incrementLevels(m.getLevelsGained());
+      int tesoros = m.getTreasuresGained();
+      
+      CardDealer baraja = CardDealer.getInstance();
+      
+      for(int i = 0 ; i<tesoros ; i++){
+          hiddenTreasures.add(baraja.nextTreasure());
+      }
+  }
+  
+  private void applyBadConsequence(Monster m){
+      BadConsequence bad = m.getBadConsequence();
+      int niveles = bad.getLevels();
+      
+      this.decrementLevels(niveles);
+      BadConsequence pendingBad =  adjustToFitTreasureLists(visibleTreasures,hiddenTreasures);
+      this.setPendingBadConsequence(pendingBad);
+      
+  }
+  
+  public Treasure stealTreasure(){
+      boolean canI = this.canISteal();
+      Treasure treasure = null;
+      
+      if(canI){
+          boolean canYou = enemy.canYouGiveMeATreasure();
+          if(canYou){
+              treasure=enemy.giveMeATreasure();
+              this.hiddenTreasures.add(treasure);
+              this.haveStolen();
+          }
+      }
+      return treasure;
+  }
+  public void discardVisibleTreasure(Treasure t){
+      visibleTreasures.remove(t);
+  }
+  
+  public void discardHiddenTreasure(Treasure t){
+      hiddenTreasures.remove(t);
+  }
+  
+  public void discardAllTreasures(){
+      for(Treasure treasure : visibleTreasures){
+          this.discardVisibleTreasure(treasure);
+      }
+      for(Treasure treasure : hiddenTreasures){
+          this.discardHiddenTreasure(treasure);
+      }
+  }
+  
+  public void initTreasures(){
+      CardDealer dealer = CardDealer.getInstance();
+      Dice dice = Dice.getInstance();
+      
+      this.bringToLife();
+      
+      Treasure treasure = dealer.nextTreasure();
+      hiddenTreasures.add(treasure);
+      
+      int number = dice.nextNumber();
+      
+      if(number>1){
+          treasure = dealer.nextTreasure();
+          hiddenTreasures.add(treasure);
+      }
+      
+      if(number == 6){
+          treasure = dealer.nextTreasure();
+          hiddenTreasures.add(treasure);
+          
+      }
+  }
+  
+  
          
-  public Treasure giveMeATreasure(){
-      
-      int posAleatorio;
-      
-      posAleatorio = (int) Math.random()*hiddenTreasures.size();
-      
-      return hiddenTreasures.get(posAleatorio);
-  }    
+          
 }
-
 
 
 
