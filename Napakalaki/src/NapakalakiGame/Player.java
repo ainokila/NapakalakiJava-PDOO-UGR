@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package napakalaki;
+package NapakalakiGame;
 
 import java.util.ArrayList;
 
@@ -46,6 +46,14 @@ public class Player {
  public String getName(){
      
      return name;
+ }
+ 
+ public ArrayList<Treasure> getVisibleTreasures(){
+     return visibleTreasures;
+ }
+ 
+ public ArrayList<Treasure> getHiddenTreasures(){
+     return hiddenTreasures;
  }
  
  private void bringToLife(){
