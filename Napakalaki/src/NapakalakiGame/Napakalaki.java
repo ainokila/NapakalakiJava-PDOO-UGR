@@ -64,8 +64,12 @@ private Player nextPlayer(){
 }
 
 private boolean nextTurnAllowed(){
-         
-    return currentPlayer.validState();
+         boolean solucion = false;
+          
+          if(currentPlayer != null){
+              solucion = currentPlayer.validState();
+          }
+    return solucion;
 }
 
 
