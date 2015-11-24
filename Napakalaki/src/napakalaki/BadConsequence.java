@@ -143,6 +143,27 @@ public class BadConsequence {
      }
      
      public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v , ArrayList<Treasure> h){
+         //***************************DUDAS EN ESTE METODO **************************************
+
+         ArrayList<TreasureKind> visibles = new ArrayList();
+         ArrayList<TreasureKind> ocultos = new ArrayList();
+         
+         for(Treasure iterador:v){
+             if(!this.specificVisibleTreasures.contains(iterador.getType())){
+                 visibles.add(iterador.getType());
+             }
+            
+         }
+         
+        for(Treasure iterador:h){
+             if(!this.specificHiddenTreasures.contains(iterador.getType())){
+                 ocultos.add(iterador.getType());
+             }
+            
+         }
+         
+          
+         return new BadConsequence(this.text,0,visibles,ocultos);
          
      }
     
