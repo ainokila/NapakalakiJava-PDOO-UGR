@@ -161,9 +161,9 @@ public class BadConsequence {
              }
             
          }
-         
+        
           
-         return new BadConsequence(this.text,0,visibles,ocultos);
+        return new BadConsequence(this.text,0,visibles,ocultos);
 
          
      }

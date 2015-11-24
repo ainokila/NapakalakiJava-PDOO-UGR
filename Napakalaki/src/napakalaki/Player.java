@@ -216,11 +216,17 @@ public class Player {
   }
   
   private void applyBadConsequence(Monster m){
+      
       BadConsequence bad = m.getBadConsequence();
+      
       int niveles = bad.getLevels();
       
       this.decrementLevels(niveles);
-      BadConsequence pendingBad =  adjustToFitTreasureLists(visibleTreasures,hiddenTreasures);
+    
+      BadConsequence pendingBad = pendingBadConsequence; // Si no le daba un valor inicial e igualaba directamente, daba error.
+      
+      pendingBad.adjustToFitTreasureLists(visibleTreasures,hiddenTreasures);
+      
       this.setPendingBadConsequence(pendingBad);
       
   }
@@ -339,7 +345,6 @@ public class Player {
       }
   }
 }
-
 
 
 
