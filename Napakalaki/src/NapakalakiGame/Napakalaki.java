@@ -72,14 +72,14 @@ private boolean nextTurnAllowed(){
 private void setEnemies(){
         
     int posAleatorio;
-        
+    int tamanio = players.size();
     for(Player iterador : players){
         
-       posAleatorio = (int) Math.random()*players.size();
+       posAleatorio = (int) (Math.random() * tamanio);
        
        while (players.get(posAleatorio) == iterador){
            
-           posAleatorio = (int) Math.random()*players.size();
+           posAleatorio = (int) (Math.random() * tamanio);
        }
         
        iterador.setEnemyPlayer(players.get(posAleatorio));
