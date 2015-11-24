@@ -142,9 +142,9 @@ public class BadConsequence {
          }
      }
      
-     public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v , ArrayList<Treasure> h){
+    /* public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v , ArrayList<Treasure> h){
          
-     }
+     }*/
     
     
 }

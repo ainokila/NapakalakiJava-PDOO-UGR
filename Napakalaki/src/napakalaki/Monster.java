@@ -42,7 +42,7 @@ public class Monster {
         return price.getLevel();
     }
     
-    public int getTreasuresGainer(){
+    public int getTreasuresGained(){
         return price.getTreasures();
     }
     

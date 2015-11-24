@@ -1,5 +1,5 @@
 //*
- * To change this license header, choose License Headers in Project Properties.
+ /*To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -111,7 +111,7 @@ public class Player {
      
  }
  
- private boolean validState(){
+ public boolean validState(){
      
      boolean solucion=true;
      
@@ -238,6 +238,16 @@ public class Player {
       }
       return treasure;
   }
+  
+  private Treasure giveMeATreasure(){
+       
+       Treasure solucion;
+       int posAleatorio = (int) Math.random()*hiddenTreasures.size();
+       solucion = hiddenTreasures.get(posAleatorio);
+       
+       return solucion;
+  }
+  
   public void discardVisibleTreasure(Treasure t){
       visibleTreasures.remove(t);
   }
