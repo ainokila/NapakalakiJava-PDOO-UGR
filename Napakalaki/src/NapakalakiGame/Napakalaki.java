@@ -16,7 +16,7 @@ public class Napakalaki {
     
 private Player currentPlayer;
 private ArrayList<Player> players;
-private CardDealer dealer;
+private CardDealer dealer = CardDealer.getInstance();
 private Monster currentMonster;
 private static final Napakalaki instance = new Napakalaki();
 
@@ -40,6 +40,7 @@ private void initPlayers(ArrayList<String> names){
    for(String iterador : names){
        players.add(new Player(iterador));
    }
+   
 }
 private Player nextPlayer(){
         Player aux;
@@ -49,6 +50,7 @@ private Player nextPlayer(){
           posicion = (int) Math.random()*numeroJugadores;
           
           aux = players.get(posicion);
+          //currentPlayer = aux; // Ñapa pa ver si funciona
     }
     else{
         posicion = players.indexOf(currentPlayer);
@@ -103,7 +105,7 @@ public boolean nextTurn(){
     
     boolean stateOK = false;
     
-   stateOK= nextTurnAllowed();
+   stateOK= nextTurnAllowed(); //Peta aqui
    
    if(stateOK){
        
