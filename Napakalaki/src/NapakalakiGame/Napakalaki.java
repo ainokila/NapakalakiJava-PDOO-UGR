@@ -36,7 +36,7 @@ public static Napakalaki getInstance() {
 }
         
 private void initPlayers(ArrayList<String> names){
-
+    players = new ArrayList();
    for(String iterador : names){
        players.add(new Player(iterador));
    }
