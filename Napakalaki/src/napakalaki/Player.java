@@ -7,6 +7,7 @@ package napakalaki;
 
 import java.util.ArrayList;
 
+
 /**
  *
  * @author ainokila
@@ -174,7 +175,7 @@ public class Player {
     return solucion;
   }
   
-  private boolean canMakeVisibleTreasure(Treasure t){
+  private boolean canMakeTreasureVisible(Treasure t){
       
       boolean solucion=true;
       
@@ -249,11 +250,25 @@ public class Player {
   }
   
   public void discardVisibleTreasure(Treasure t){
+      
       visibleTreasures.remove(t);
+      
+      if((pendingBadConsequence != null) && (!pendingBadConsequence.isEmpty())){
+            pendingBadConsequence.substractVisibleTreasure(t);
+      }
+       
+      dieIfNoTreasures();
   }
   
   public void discardHiddenTreasure(Treasure t){
+      
       hiddenTreasures.remove(t);
+      
+      if((pendingBadConsequence != null) && (!pendingBadConsequence.isEmpty())){
+            pendingBadConsequence.substractHiddenTreasure(t);
+      }
+       
+      dieIfNoTreasures();
   }
   
   public void discardAllTreasures(){
@@ -288,9 +303,41 @@ public class Player {
       }
   }
   
-  
-         
+  public CombatResult combat(Monster m){
+      CombatResult combatResult;
+      int myLevel = getCombatLevel();
+      int monsterLevel = m.getCombatLevel();
+      
+      if(myLevel > monsterLevel){
+          applyPrize(m);
           
+          if(level >=MAXLEVEL){
+                combatResult = CombatResult.WINGAME;
+          }
+          else{
+               combatResult = CombatResult.WIN;
+          }
+          
+      }
+      else{
+          applyBadConsequence(m);
+          
+          combatResult = CombatResult.LOSE;
+      }
+      
+      return combatResult;
+      
+  }
+  
+  public void makeTreasureVisible(Treasure t){
+      
+      boolean canI = canMakeTreasureVisible(t);
+      
+      if(canI){
+          visibleTreasures.add(t);
+          hiddenTreasures.remove(t);
+      }
+  }
 }
 
 

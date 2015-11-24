@@ -86,28 +86,70 @@ private void setEnemies(){
     
     }
 }
-/*
-public CombatResult developCombat(){
-    
-    
-}
-public void discardVisibleTreasures(ArrayList<Treasure> treasures){
-    
-}
-public void discardHiddenTreasures(ArrayList<Treasure> treasures){
-    
-    
-}
-public void makeTreasuresVisible(ArrayList<Treasure> treasures){
-    
-}
+
 public void initGame(ArrayList<String> player){
     
+    initPlayers(player);
+    setEnemies();
+    dealer.initCards();
+    nextTurn();    
 }
 
 public boolean nextTurn(){
-    return true;
-}*/
+    
+    boolean stateOK = false;
+    
+   stateOK= nextTurnAllowed();
+   
+   if(stateOK){
+       
+       currentMonster = dealer.nextMonster();
+       currentPlayer = nextPlayer();
+       
+       boolean dead = currentPlayer.isDeath();
+       
+       if(dead){
+           currentPlayer.initTreasures();
+       }
+       
+   }
+    return stateOK;
+}
+
+public void discardVisibleTreasures(ArrayList<Treasure> treasures){
+        
+      for(Treasure treasure : treasures){
+          currentPlayer.discardVisibleTreasure(treasure);
+          dealer.giveTreasureBack(treasure);
+      }
+}
+
+public void discardHiddenTreasures(ArrayList<Treasure> treasures){
+    
+    for(Treasure treasure : treasures){
+          currentPlayer.discardHiddenTreasure(treasure);
+          dealer.giveTreasureBack(treasure);
+      }
+}
+
+
+public CombatResult developCombat(){
+    Monster m = currentMonster;
+    CombatResult combatResult = currentPlayer.combat(m);
+    
+    dealer.giveMonsterBack(m);
+    
+    return combatResult;  
+}
+
+public void makeTreasuresVisible(ArrayList<Treasure> treasures){
+    
+     for(Treasure t : treasures){
+          currentPlayer.makeTreasureVisible(t);
+          
+    }    
+}
+
 public Player getCurrentPlayer(){
     return currentPlayer;
 
