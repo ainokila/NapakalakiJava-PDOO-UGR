@@ -148,7 +148,7 @@ public class BadConsequence {
          
         
          BadConsequence solucion = null;
-         
+        
         if (this.specificHiddenTreasures.isEmpty() && this.specificVisibleTreasures.isEmpty()){
             
                     int visibles=0;
@@ -172,10 +172,10 @@ public class BadConsequence {
                     }
             
           solucion =  new BadConsequence(this.text,0,visibles,ocultos);
-            
+                   
         }
          
-        if(nHiddenTreasures ==0 && nVisibleTreasures == 0){
+        else if(nHiddenTreasures ==0 && nVisibleTreasures == 0){
             
             
                 ArrayList<TreasureKind> visibles = new ArrayList();
@@ -197,9 +197,10 @@ public class BadConsequence {
 
 
                  solucion =  new BadConsequence(this.text,0,visibles,ocultos);
-         
         }
     
+         
+         
     return solucion;
  }
 } 

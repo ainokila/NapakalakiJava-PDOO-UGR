@@ -233,14 +233,14 @@ public class Player {
   private void applyBadConsequence(Monster m){
       
       BadConsequence bad = m.getBadConsequence();
-      
+      System.out.print(bad + "<----Bad\n\n\n");
       int niveles = bad.getLevels();
       
       this.decrementLevels(niveles);
     
-      BadConsequence pendingBad = bad; // Si no le daba un valor inicial e igualaba directamente, daba error.
+      BadConsequence pendingBad; 
       
-      pendingBad.adjustToFitTreasureLists(visibleTreasures,hiddenTreasures);
+      pendingBad = bad.adjustToFitTreasureLists(visibleTreasures,hiddenTreasures);
       
       this.setPendingBadConsequence(pendingBad);
       
@@ -332,7 +332,7 @@ public class Player {
       int monsterLevel = m.getCombatLevel();
       
       if(myLevel > monsterLevel){
-          applyPrize(m);
+          this.applyPrize(m);
           
           if(level >=MAXLEVEL){
                 combatResult = CombatResult.WINGAME;
@@ -343,7 +343,8 @@ public class Player {
           
       }
       else{
-          applyBadConsequence(m);
+          
+          this.applyBadConsequence(m);
           
           combatResult = CombatResult.LOSE;
       }
