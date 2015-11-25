@@ -32,4 +32,13 @@ public class Treasure {
     public TreasureKind getType(){
         return type;
     }
+    
+      @Override
+     public String toString(){
+          
+        String solucion = "Nombre = " + name + " | Bonus = " + Integer.toString(bonus) 
+               + " | Tipo = " + type.toString() + "\n";
+        return solucion ;
+        
+      }
 }

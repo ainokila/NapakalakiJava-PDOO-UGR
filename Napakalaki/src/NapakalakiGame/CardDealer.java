@@ -179,7 +179,7 @@ private void initMonsterCardDeck(){
 }
 private void shuffleTreasures(){
     Collections.shuffle(unusedTreasures);
-    
+      
 }
 private void shuffleMonsters(){
     Collections.shuffle(unusedMonster);
@@ -197,7 +197,6 @@ public Treasure nextTreasure(){
     }
     
     Treasure auxiliar = this.unusedTreasures.get(0);
-    
     usedTreasures.add(auxiliar);
     unusedTreasures.remove(auxiliar);
     
@@ -217,7 +216,6 @@ public Monster nextMonster(){
     }
     
     Monster auxiliar = this.unusedMonster.get(0);
-    
     usedMonster.add(auxiliar);
     unusedMonster.remove(auxiliar);
     
@@ -232,8 +230,11 @@ public void giveMonsterBack(Monster m){
 }
         
 public void initCards(){
+    
     this.initTreasureCardDeck();
     this.initMonsterCardDeck();
+    shuffleTreasures();
+    shuffleMonsters();
 }
     
 }

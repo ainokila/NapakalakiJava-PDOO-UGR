@@ -145,27 +145,61 @@ public class BadConsequence {
      public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v , ArrayList<Treasure> h){
          //***************************DUDAS EN ESTE METODO **************************************
 
-         ArrayList<TreasureKind> visibles = new ArrayList();
-         ArrayList<TreasureKind> ocultos = new ArrayList();
          
-         for(Treasure iterador:v){
-             if(!this.specificVisibleTreasures.contains(iterador.getType())){
-                 visibles.add(iterador.getType());
-             }
+        
+         BadConsequence solucion = null;
+         
+        if (this.specificHiddenTreasures.isEmpty() && this.specificVisibleTreasures.isEmpty()){
             
-         }
-         
-        for(Treasure iterador:h){
-             if(!this.specificHiddenTreasures.contains(iterador.getType())){
-                 ocultos.add(iterador.getType());
-             }
+                    int visibles=0;
+                    int ocultos=0;
+
+                    int tamV = v.size();
+                    int tamH = h.size();
+
+                    if(nVisibleTreasures <= tamV ){
+                        visibles = nVisibleTreasures;
+
+                    }else if(tamV < nVisibleTreasures){
+                        visibles = tamV;
+                    }
+
+                     if(nHiddenTreasures <= tamH ){
+                        ocultos = nHiddenTreasures;
+
+                    }else if(tamH < nHiddenTreasures){
+                       ocultos = tamH;
+                    }
             
-         }
+          solucion =  new BadConsequence(this.text,0,visibles,ocultos);
+            
+        }
          
-          
-         return new BadConsequence(this.text,0,visibles,ocultos);
+        if(nHiddenTreasures ==0 && nVisibleTreasures == 0){
+            
+            
+                ArrayList<TreasureKind> visibles = new ArrayList();
+                ArrayList<TreasureKind> ocultos = new ArrayList();
+
+                 for(Treasure iterador:v){
+                     if(this.specificVisibleTreasures.contains(iterador.getType())){
+                         visibles.add(iterador.getType());
+                     }
+
+                 }
+
+                for(Treasure iterador:h){
+                     if(this.specificHiddenTreasures.contains(iterador.getType())){
+                         ocultos.add(iterador.getType());
+                     }
+
+                 }
+
+
+                 solucion =  new BadConsequence(this.text,0,visibles,ocultos);
          
-     }
+        }
     
-    
-}
+    return solucion;
+ }
+} 

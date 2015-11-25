@@ -40,6 +40,7 @@ private void initPlayers(ArrayList<String> names){
    for(String iterador : names){
        players.add(new Player(iterador));
    }
+    currentPlayer = nextPlayer();
    
 }
 private Player nextPlayer(){
@@ -47,10 +48,11 @@ private Player nextPlayer(){
         int posicion;
     if (currentPlayer == null){
           int numeroJugadores = players.size() - 1;
-          posicion = (int) Math.random()*numeroJugadores;
-          
+          posicion = (int) (Math.random() * numeroJugadores);
+           
           aux = players.get(posicion);
-          //currentPlayer = aux; // Ñapa pa ver si funciona
+          currentPlayer = aux;
+          
     }
     else{
         posicion = players.indexOf(currentPlayer);
@@ -62,15 +64,19 @@ private Player nextPlayer(){
         }
                 
     }
+    
+         
     return aux;
 }
 
 private boolean nextTurnAllowed(){
-         boolean solucion = false;
+         
+    boolean solucion = false;
           
           if(currentPlayer != null){
               solucion = currentPlayer.validState();
           }
+          
     return solucion;
 }
 
@@ -105,7 +111,7 @@ public boolean nextTurn(){
     
     boolean stateOK = false;
     
-   stateOK= nextTurnAllowed(); //Peta aqui
+   stateOK= nextTurnAllowed();
    
    if(stateOK){
        

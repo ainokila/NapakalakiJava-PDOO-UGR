@@ -22,7 +22,7 @@ public class Player {
  private ArrayList<Treasure> hiddenTreasures = new ArrayList();
  private ArrayList<Treasure> visibleTreasures = new ArrayList();
  private Player enemy;
- private BadConsequence pendingBadConsequence;
+ private BadConsequence pendingBadConsequence = new BadConsequence("",0,0,0);
  
  
  public Player (String nombre){
@@ -42,7 +42,14 @@ public class Player {
     return solucion;
  }
  
- 
+   @Override
+     public String toString(){
+          
+        String solucion = "Nombre del Jugador: " + name +  "\n";
+        return solucion ;
+        
+      }
+     
  public String getName(){
      
      return name;
@@ -124,7 +131,7 @@ public class Player {
      
      boolean solucion=true;
      
-     if(!(pendingBadConsequence.isEmpty())&& hiddenTreasures.size() < 4){
+     if(!(pendingBadConsequence.isEmpty()) && hiddenTreasures.size() < 4){
          
          solucion = false;
      }
@@ -231,7 +238,7 @@ public class Player {
       
       this.decrementLevels(niveles);
     
-      BadConsequence pendingBad = pendingBadConsequence; // Si no le daba un valor inicial e igualaba directamente, daba error.
+      BadConsequence pendingBad = bad; // Si no le daba un valor inicial e igualaba directamente, daba error.
       
       pendingBad.adjustToFitTreasureLists(visibleTreasures,hiddenTreasures);
       
@@ -286,11 +293,13 @@ public class Player {
   }
   
   public void discardAllTreasures(){
-      for(Treasure treasure : visibleTreasures){
-          this.discardVisibleTreasure(treasure);
+      
+      for(int i =0; i< visibleTreasures.size(); i++){
+          this.discardVisibleTreasure(visibleTreasures.get(i));
       }
-      for(Treasure treasure : hiddenTreasures){
-          this.discardHiddenTreasure(treasure);
+      
+      for(int i =0; i< hiddenTreasures.size(); i++){
+          this.discardHiddenTreasure(hiddenTreasures.get(i));
       }
   }
   
