@@ -264,7 +264,8 @@ public class Player {
   private Treasure giveMeATreasure(){
        
        Treasure solucion;
-       int posAleatorio = (int) Math.random()*hiddenTreasures.size();
+       int posAleatorio;
+     posAleatorio = (int) (Math.random() * hiddenTreasures.size());
        solucion = hiddenTreasures.get(posAleatorio);
        
        return solucion;
