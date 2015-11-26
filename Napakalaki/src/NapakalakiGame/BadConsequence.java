@@ -143,11 +143,8 @@ public class BadConsequence {
      }
      
      public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v , ArrayList<Treasure> h){
-         //***************************DUDAS EN ESTE METODO **************************************
-
-         
-        
-         BadConsequence solucion = null;
+              
+         BadConsequence solucion;
         
         if (this.specificHiddenTreasures.isEmpty() && this.specificVisibleTreasures.isEmpty()){
             
@@ -175,7 +172,7 @@ public class BadConsequence {
                    
         }
          
-        else if(nHiddenTreasures ==0 && nVisibleTreasures == 0){
+        else{
             
             
                 ArrayList<TreasureKind> visibles = new ArrayList();
