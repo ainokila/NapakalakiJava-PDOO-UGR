@@ -22,13 +22,6 @@ private static final Napakalaki instance = new Napakalaki();
 
 
 private Napakalaki() { 
-    
-    ArrayList<String> jugadores = new ArrayList();
-    jugadores.add("Jugador1");
-    jugadores.add("Jugador2");
-    jugadores.add("Jugador3");
-    
-    initPlayers(jugadores);
 
 }
 public static Napakalaki getInstance() {
