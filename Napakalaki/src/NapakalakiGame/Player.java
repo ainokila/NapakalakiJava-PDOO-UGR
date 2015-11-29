@@ -28,6 +28,7 @@ public class Player {
  public Player (String nombre){
      
      name = nombre;
+     level = 1 ;
  }
  
  
@@ -45,7 +46,7 @@ public class Player {
    @Override
      public String toString(){
           
-        String solucion = "Nombre del Jugador: " + name +  "\n";
+        String solucion = "Nombre del Jugador: " + name +"Nivel: " + level+  "\n";
         return solucion ;
         
       }
