@@ -202,14 +202,13 @@ public class Player {
           
           switch (elemento){
               
-              case ONEHAND: //En el caso de los de una mano hay que comprar algunas cosas
+              case ONEHAND: 
 
-                    //Si está equipado con dos manos no puede agregar un tesoro de una mano
+                    
                     if (howManyVisibleTreasures(TreasureKind.BOTHHANDS)>0) {
                         solucion = false;
                     } else {
-
-                        //Recorremos los tesoros visibles para ver si ya tiene alguno de una mano (0, 1 o 2)
+                        
                         int i = 0;
                         for (Treasure tv : this.visibleTreasures) {
                             if (tv.getType() == (TreasureKind.ONEHAND)) {
@@ -218,10 +217,8 @@ public class Player {
                         }
 
                         if (i == 2) {
-                            //Si están las dos manos ocupadas no puede
                             solucion = false;
                         } else {
-                            //En caso contrario si que puede
                             solucion = true;
                         }
                     }
