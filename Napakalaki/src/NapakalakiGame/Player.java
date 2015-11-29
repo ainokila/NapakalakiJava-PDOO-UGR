@@ -283,7 +283,7 @@ public class Player {
        int posAleatorio;
        posAleatorio = (int) (Math.random() * hiddenTreasures.size());
        solucion = hiddenTreasures.get(posAleatorio);
-       hiddenTreasures.remove(solucion);
+       //hiddenTreasures.remove(solucion);
        
        return solucion;
   }
