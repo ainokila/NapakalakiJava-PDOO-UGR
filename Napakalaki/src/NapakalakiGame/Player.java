@@ -191,31 +191,50 @@ public class Player {
     return solucion;
   }
   
+  
   private boolean canMakeTreasureVisible(Treasure t){
       
       boolean solucion=true;
       
-      for(Treasure iterador  : visibleTreasures){
-          int contadorOneHand = 0;
+      if(visibleTreasures.size()<4){
           
-          if(iterador.getType() == TreasureKind.ONEHAND){
-              contadorOneHand++;
-          }
-          if(!(contadorOneHand<2 || t.getType()==TreasureKind.ONEHAND)){
+          TreasureKind elemento = t.getType();
+          
+          switch (elemento){
               
-                if(iterador.getType() == t.getType()){
-                solucion = false;
-                }
-                if(iterador.getType()==TreasureKind.BOTHHANDS && t.getType() == TreasureKind.ONEHAND  ){
-                    solucion = false;
-                }
-                if(iterador.getType()==TreasureKind.ONEHAND && t.getType() == TreasureKind.BOTHHANDS ){
-                    solucion = false;
-                }
+              case ONEHAND: //En el caso de los de una mano hay que comprar algunas cosas
+
+                    //Si está equipado con dos manos no puede agregar un tesoro de una mano
+                    if (howManyVisibleTreasures(TreasureKind.BOTHHANDS)>0) {
+                        solucion = false;
+                    } else {
+
+                        //Recorremos los tesoros visibles para ver si ya tiene alguno de una mano (0, 1 o 2)
+                        int i = 0;
+                        for (Treasure tv : this.visibleTreasures) {
+                            if (tv.getType() == (TreasureKind.ONEHAND)) {
+                                i++;
+                            }
+                        }
+
+                        if (i == 2) {
+                            //Si están las dos manos ocupadas no puede
+                            solucion = false;
+                        } else {
+                            //En caso contrario si que puede
+                            solucion = true;
+                        }
+                    }
+                    break;
+
+                default: //El resto de casos, si esta en uso false, si no true
+                    solucion = howManyVisibleTreasures(elemento)==0;
+                    break;
+                        
           }
-          
-          
+    
       }
+      
       
       return solucion;
   }
@@ -234,7 +253,6 @@ public class Player {
   private void applyBadConsequence(Monster m){
       
       BadConsequence bad = m.getBadConsequence();
-      System.out.print(bad + "<----Bad\n\n\n");
       int niveles = bad.getLevels();
       
       this.decrementLevels(niveles);
