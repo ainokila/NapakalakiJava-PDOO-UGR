@@ -365,7 +365,7 @@ public class Player {
       else{
           
           this.applyBadConsequence(m);
-          
+          dieIfNoTreasures();
           combatResult = CombatResult.LOSE;
       }
       
