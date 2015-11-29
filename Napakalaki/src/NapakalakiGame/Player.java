@@ -224,7 +224,7 @@ public class Player {
                     }
                     break;
 
-                default: //El resto de casos, si esta en uso false, si no true
+                default: 
                     solucion = howManyVisibleTreasures(elemento)==0;
                     break;
                         
