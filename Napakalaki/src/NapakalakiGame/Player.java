@@ -132,7 +132,7 @@ public class Player {
      
      boolean solucion=true;
      
-     if(!(pendingBadConsequence.isEmpty()) && hiddenTreasures.size() > 4){
+     if(!(pendingBadConsequence.isEmpty()) || hiddenTreasures.size() > 4){
          
          solucion = false;
      }
