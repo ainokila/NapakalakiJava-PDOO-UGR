@@ -218,6 +218,26 @@ public class Player {
                         }
                     }
                     break;
+               
+              case BOTHHANDS:
+                  if(howManyVisibleTreasures(TreasureKind.ONEHAND)>0){
+                      solucion = false;
+                  } else {
+                        
+                        int j = 0;
+                        for (Treasure tv : this.visibleTreasures) {
+                            if (tv.getType() == (TreasureKind.BOTHHANDS)) {
+                                j++;
+                            }
+                        }
+
+                        if (j == 1) {
+                            solucion = false;
+                        } else {
+                            solucion = true;
+                        }
+                    }
+                    break;
 
                 default: 
                     solucion = howManyVisibleTreasures(elemento)==0;
