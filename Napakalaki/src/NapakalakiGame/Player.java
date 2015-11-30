@@ -231,7 +231,7 @@ public class Player {
           }
     
       }else{
-          solucion = howManyVisibleTreasures(t.getType())== 0;
+          solucion = false;
       }
       
       
