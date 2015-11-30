@@ -72,12 +72,7 @@ public class Player {
  private int getLevelTreasures(){
      
      int solucion  = 0;
-    for (Treasure iterador: hiddenTreasures){
-            
-            solucion = solucion+ iterador.getBonus();
-              
-    }
-    
+     
     for (Treasure iterador: visibleTreasures){
             
             solucion = solucion+ iterador.getBonus();
