@@ -52,14 +52,16 @@ private Player nextPlayer(){
         posicion++;
         if(posicion >= players.size()){
                 aux = players.get(0);
+                currentPlayer = aux;
         }else{
                 aux = players.get(posicion);
+                currentPlayer = aux;
         }
                 
     }
     
          
-    return aux;
+    return currentPlayer;
 }
 
 private boolean nextTurnAllowed(){
