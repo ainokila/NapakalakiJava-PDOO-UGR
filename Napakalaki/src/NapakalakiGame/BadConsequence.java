@@ -193,7 +193,7 @@ public class BadConsequence {
                  }
 
 
-                 solucion =  new BadConsequence(this.text,0,visibles,ocultos);
+                 solucion =  new BadConsequence("",0,visibles,ocultos);
         }
     
          
