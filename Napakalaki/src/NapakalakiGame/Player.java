@@ -292,7 +292,7 @@ public class Player {
           this.discardAllTreasures();
           
            System.out.println( "\n\n" + "Al morir el jugador, este pierde todos los tesoros de los que dispone" +
-                                "(tanto equipados como ocultos) y su nivel quedará fijado en 1." + "\n\n");
+                                "(tanto equipados como ocultos) y su nivel queda fijado en 1." + "\n\n");
           //Decremento el máximo de niveles para asegurar que el nivel del player se pone a 1.
           
           
