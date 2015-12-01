@@ -416,7 +416,7 @@ public class Player {
           combatResult = CombatResult.LOSE;
       }
       
-      return combatResult = CombatResult.LOSE;
+      return combatResult;
       
   }
   
