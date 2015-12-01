@@ -46,7 +46,7 @@ public class Player {
    @Override
      public String toString(){
           
-        String solucion = "Nombre del Jugador: " + name +" Nivel: " + level+  "\n" + "PendingBad: " + pendingBadConsequence + "\n" ;
+        String solucion = "Nombre del Jugador: " + name +" Nivel: " + level+  "\n"  ;
         return solucion ;
         
       }
@@ -270,23 +270,34 @@ public class Player {
       BadConsequence bad = m.getBadConsequence();
       BadConsequence pendingBad; 
       
-      pendingBad = bad.adjustToFitTreasureLists(visibleTreasures,hiddenTreasures);
+      if(!(bad.isDeath())){
       
-      int niveles = pendingBad.getLevels();
+                pendingBad = bad.adjustToFitTreasureLists(visibleTreasures,hiddenTreasures);
+
+                int niveles = pendingBad.getLevels();
+
+                this.decrementLevels(niveles);
+                
+            //Como ya se han perdido los niveles, ahora los vuelvo a poner a 0
+                pendingBad.setLevels(0);
+                this.setPendingBadConsequence(pendingBad);
+                
+      }else if(bad.isDeath()){
+          //Al morir el jugador, este pierde todos los tesoros de los que dispone (tanto equipados como ocultos)
+          //y su nivel quedará fijado en 1.
+          System.out.println( "\n\n" + "Al morir el jugador, este pierde todos los tesoros de los que dispone" +
+                                "(tanto equipados como ocultos) y su nivel quedará fijado en 1." + "\n\n");
+          //Decremento el máximo de niveles para asegurar que el nivel del player se pone a 1.
+          this.decrementLevels(MAXLEVEL);
+          
+          //Y por último descarto todos los tesoros
+          this.discardAllTreasures();
+          
+          
+         }
+         
+      }
       
-      this.decrementLevels(niveles);
-      
-      pendingBad.setLevels(0);
-      
-      this.setPendingBadConsequence(pendingBad);
-      
-      
-      
-    
-      
-      
-  }
-  
   public Treasure stealTreasure(){
       boolean canI = this.canISteal();
       Treasure treasure = null;
@@ -403,7 +414,7 @@ public class Player {
           combatResult = CombatResult.LOSE;
       }
       
-      return combatResult;
+      return combatResult = CombatResult.LOSE;
       
   }
   

@@ -160,29 +160,8 @@ public class BadConsequence {
      public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v , ArrayList<Treasure> h){
             
          BadConsequence solucion;
-                
-         if (this.death == true){
-             
-           ArrayList<TreasureKind> visibles = new ArrayList();
-           ArrayList<TreasureKind> ocultos = new ArrayList();
-
-                 for(Treasure iterador:v){
-                    visibles.add(iterador.getType());
-                 }
-
-                for(Treasure iterador:h){
-                   ocultos.add(iterador.getType());
-                }
-              //Cómo MAXTREASURES = 10 lo utilizo para indicar que pierde todos sus niveles al morir,
-              // aparte de todos sus tesoros.
-              
-             solucion =  new BadConsequence("",MAXTREASURES,visibles,ocultos);
-            
-               
-         }
-         
-        
-         else if (this.specificHiddenTreasures.isEmpty() && this.specificVisibleTreasures.isEmpty()){
+           
+         if (this.specificHiddenTreasures.isEmpty() && this.specificVisibleTreasures.isEmpty()){
             
                     int visibles=0;
                     int ocultos=0;
