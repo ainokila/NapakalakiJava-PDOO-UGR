@@ -141,7 +141,7 @@ public class BadConsequence {
         for(int i =0; i< specificVisibleTreasures.size(); i++){
              if(t.getType() == specificVisibleTreasures.get(i)){
                  specificVisibleTreasures.remove(i);
-                 nVisibleTreasures--;
+                 
              }
         }
     
@@ -152,7 +152,7 @@ public class BadConsequence {
          for(int i =0; i< specificHiddenTreasures.size(); i++){
              if(t.getType() == specificHiddenTreasures.get(i)){
                  specificHiddenTreasures.remove(i);
-                 nHiddenTreasures--;
+                 
              }
         }
      }
