@@ -6,6 +6,7 @@
 package NapakalakiGame;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
@@ -361,14 +362,19 @@ public class Player {
   }
   
   public void discardAllTreasures(){
-      
+      /*Nos deja siempre 1 sin borrar , solucion provisional
       for(int i =0; i< visibleTreasures.size(); i++){
           this.discardVisibleTreasure(visibleTreasures.get(i));
       }
       
       for(int i =0; i< hiddenTreasures.size(); i++){
           this.discardHiddenTreasure(hiddenTreasures.get(i));
-      }
+      }*/
+      this.hiddenTreasures.clear();
+      this.visibleTreasures.clear();
+      this.pendingBadConsequence = new BadConsequence("",0,0,0);
+      dieIfNoTreasures();
+      
   }
   
   public void initTreasures(){
