@@ -266,16 +266,24 @@ public class Player {
   
   private void applyBadConsequence(Monster m){
       
-      BadConsequence bad = m.getBadConsequence();
-      int niveles = bad.getLevels();
       
-      this.decrementLevels(niveles);
-    
+      BadConsequence bad = m.getBadConsequence();
       BadConsequence pendingBad; 
       
       pendingBad = bad.adjustToFitTreasureLists(visibleTreasures,hiddenTreasures);
       
+      int niveles = pendingBad.getLevels();
+      
+      this.decrementLevels(niveles);
+      
+      pendingBad.setLevels(0);
+      
       this.setPendingBadConsequence(pendingBad);
+      
+      
+      
+    
+      
       
   }
   
@@ -311,6 +319,10 @@ public class Player {
       
       if((pendingBadConsequence != null) && (!pendingBadConsequence.isEmpty())){
             pendingBadConsequence.substractVisibleTreasure(t);
+            int n = pendingBadConsequence.getnVisibleTreasures();
+            n--;
+            pendingBadConsequence.setnVisibleTreasures(n);
+            
       }
        
       dieIfNoTreasures();
@@ -322,6 +334,10 @@ public class Player {
       
       if((pendingBadConsequence != null) && (!pendingBadConsequence.isEmpty())){
             pendingBadConsequence.substractHiddenTreasure(t);
+            int n = pendingBadConsequence.getnHiddenTreasures();
+            n--;
+            pendingBadConsequence.setnHiddenTreasures(n);
+            
       }
        
       dieIfNoTreasures();

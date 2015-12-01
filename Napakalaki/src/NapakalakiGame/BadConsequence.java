@@ -60,7 +60,21 @@ public class BadConsequence {
         
         return levels;
     }
+    
+    public void setLevels(int l){
+         this.levels = l;
+    }
 
+    public void setnVisibleTreasures(int n) {
+        
+        nVisibleTreasures = n;
+    }
+
+    public void setnHiddenTreasures(int n) {
+        
+        nHiddenTreasures = n;
+    }
+    
     public int getnVisibleTreasures() {
         
         return nVisibleTreasures;
@@ -127,6 +141,7 @@ public class BadConsequence {
         for(int i =0; i< specificVisibleTreasures.size(); i++){
              if(t.getType() == specificVisibleTreasures.get(i)){
                  specificVisibleTreasures.remove(i);
+                 nVisibleTreasures--;
              }
         }
     
@@ -137,15 +152,37 @@ public class BadConsequence {
          for(int i =0; i< specificHiddenTreasures.size(); i++){
              if(t.getType() == specificHiddenTreasures.get(i)){
                  specificHiddenTreasures.remove(i);
+                 nHiddenTreasures--;
              }
         }
      }
      
      public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v , ArrayList<Treasure> h){
-              
+            
          BadConsequence solucion;
+                
+         if (this.death == true){
+             
+           ArrayList<TreasureKind> visibles = new ArrayList();
+           ArrayList<TreasureKind> ocultos = new ArrayList();
+
+                 for(Treasure iterador:v){
+                    visibles.add(iterador.getType());
+                 }
+
+                for(Treasure iterador:h){
+                   ocultos.add(iterador.getType());
+                }
+              //Cómo MAXTREASURES = 10 lo utilizo para indicar que pierde todos sus niveles al morir,
+              // aparte de todos sus tesoros.
+              
+             solucion =  new BadConsequence("",MAXTREASURES,visibles,ocultos);
+            
+               
+         }
+         
         
-        if (this.specificHiddenTreasures.isEmpty() && this.specificVisibleTreasures.isEmpty()){
+         else if (this.specificHiddenTreasures.isEmpty() && this.specificVisibleTreasures.isEmpty()){
             
                     int visibles=0;
                     int ocultos=0;
@@ -167,7 +204,7 @@ public class BadConsequence {
                        ocultos = tamH;
                     }
             
-          solucion =  new BadConsequence("",0,visibles,ocultos);
+          solucion =  new BadConsequence("",this.levels,visibles,ocultos);
                    
         }
          
@@ -192,7 +229,7 @@ public class BadConsequence {
                  }
 
 
-                 solucion =  new BadConsequence("",0,visibles,ocultos);
+                 solucion =  new BadConsequence("",this.levels,visibles,ocultos);
         }
     
          
