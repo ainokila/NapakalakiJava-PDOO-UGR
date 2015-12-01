@@ -340,6 +340,7 @@ public class Player {
       }
        
       dieIfNoTreasures();
+      CardDealer.getInstance().giveTreasureBack(t);
   }
   
   public void discardHiddenTreasure(Treasure t){
@@ -357,6 +358,7 @@ public class Player {
       }
        
       dieIfNoTreasures();
+      CardDealer.getInstance().giveTreasureBack(t);
   }
   
   public void discardAllTreasures(){
