@@ -115,13 +115,11 @@ public class BadConsequence {
      @Override
      public String toString(){
 
-        String solucion = " " + text + "\nlevels = " + Integer.toString(levels)+"\n"
-                + "Visible Treasures = " + Integer.toString(nVisibleTreasures)+"\n" 
-                + "Hidden Treasures = " + Integer.toString(nHiddenTreasures)+"\n"
-                + "Death = " + death + "\nSpecific Hidden Treasures = " + auxiliarString(specificHiddenTreasures)+"\n"
-                + "Specific Visible Treasures = " + auxiliarString(specificVisibleTreasures);
-        
-        return solucion;
+        String solucion = " " + text + "\nDetalles: " +  Integer.toString(nVisibleTreasures) +  " tesoros visibles y  "  +  Integer.toString(nHiddenTreasures) +  " tesoros ocultos.\n"
+                +  "Tipo de Tesoro Visible: " + auxiliarString(specificVisibleTreasures)+", "
+                + "Tipo de Tesoro Oculto: " + auxiliarString(specificHiddenTreasures) + " ."
+                + "\nMuerte:  " + death ;                    
+      return solucion;
       }
     
      public boolean isEmpty(){

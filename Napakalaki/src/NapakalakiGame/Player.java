@@ -46,7 +46,8 @@ public class Player {
    @Override
      public String toString(){
           
-        String solucion = "Nombre del Jugador: " + name +" Nivel: " + level+  "\n"  + "Mal rollo a cumplir: " + pendingBadConsequence + "\n\n";
+        String solucion = " "+ name +" Nivel: " + level+  "\n"  
+                + "Mal rollo a cumplir: " + pendingBadConsequence + "\n";
         return solucion ;
         
       }
@@ -177,7 +178,7 @@ public class Player {
   private boolean canYouGiveMeATreasure(){
       boolean solucion = false;
       
-      if(hiddenTreasures.size()>0 || visibleTreasures.size()>0){
+      if(hiddenTreasures.size()> 0){
          
           solucion = true;
           
@@ -309,6 +310,7 @@ public class Player {
           if(canYou){
               treasure=enemy.giveMeATreasure();
               this.hiddenTreasures.add(treasure);
+              enemy.hiddenTreasures.remove(treasure);
               this.haveStolen();
           }
       }
@@ -321,8 +323,7 @@ public class Player {
        int posAleatorio;
        posAleatorio = (int) (Math.random() * hiddenTreasures.size());
        solucion = hiddenTreasures.get(posAleatorio);
-       //hiddenTreasures.remove(solucion);
-       
+    
        return solucion;
   }
   
@@ -340,8 +341,7 @@ public class Player {
       }
        
       dieIfNoTreasures();
-      CardDealer.getInstance().giveTreasureBack(t);
-  }
+ }
   
   public void discardHiddenTreasure(Treasure t){
       
@@ -358,7 +358,6 @@ public class Player {
       }
        
       dieIfNoTreasures();
-      CardDealer.getInstance().giveTreasureBack(t);
   }
   
   public void discardAllTreasures(){
