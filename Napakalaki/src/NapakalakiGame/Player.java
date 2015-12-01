@@ -46,7 +46,7 @@ public class Player {
    @Override
      public String toString(){
           
-        String solucion = "Nombre del Jugador: " + name +" Nivel: " + level+  "\n"  ;
+        String solucion = "Nombre del Jugador: " + name +" Nivel: " + level+  "\n"  + "Mal rollo a cumplir: " + pendingBadConsequence + "\n\n";
         return solucion ;
         
       }
