@@ -285,13 +285,15 @@ public class Player {
       }else if(bad.isDeath()){
           //Al morir el jugador, este pierde todos los tesoros de los que dispone (tanto equipados como ocultos)
           //y su nivel quedará fijado en 1.
-          System.out.println( "\n\n" + "Al morir el jugador, este pierde todos los tesoros de los que dispone" +
-                                "(tanto equipados como ocultos) y su nivel quedará fijado en 1." + "\n\n");
-          //Decremento el máximo de niveles para asegurar que el nivel del player se pone a 1.
+         
           this.decrementLevels(MAXLEVEL);
           
           //Y por último descarto todos los tesoros
           this.discardAllTreasures();
+          
+           System.out.println( "\n\n" + "Al morir el jugador, este pierde todos los tesoros de los que dispone" +
+                                "(tanto equipados como ocultos) y su nivel quedará fijado en 1." + "\n\n");
+          //Decremento el máximo de niveles para asegurar que el nivel del player se pone a 1.
           
           
          }
