@@ -123,23 +123,22 @@ public class BadConsequence {
      }
      
      public void substractVisibleTreasure(Treasure t){
-         int posicion=0;
-         for(TreasureKind iterador : specificVisibleTreasures){
-             if(t.getType() == iterador){
-                 specificVisibleTreasures.remove(posicion);
+        
+        for(int i =0; i< specificVisibleTreasures.size(); i++){
+             if(t.getType() == specificVisibleTreasures.get(i)){
+                 specificVisibleTreasures.remove(i);
              }
-             posicion++;
-         }
+        }
+    
      }
      
      public void substractHiddenTreasure(Treasure t){
-         int posicion=0;
-         for(TreasureKind iterador : specificHiddenTreasures){
-             if(t.getType() == iterador){
-                 specificHiddenTreasures.remove(posicion);
+         
+         for(int i =0; i< specificHiddenTreasures.size(); i++){
+             if(t.getType() == specificHiddenTreasures.get(i)){
+                 specificHiddenTreasures.remove(i);
              }
-             posicion++;
-         }
+        }
      }
      
      public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v , ArrayList<Treasure> h){
