@@ -319,10 +319,11 @@ public class Player {
       
       if((pendingBadConsequence != null) && (!pendingBadConsequence.isEmpty())){
             pendingBadConsequence.substractVisibleTreasure(t);
+           if(pendingBadConsequence.getnVisibleTreasures() > 0){
             int n = pendingBadConsequence.getnVisibleTreasures();
             n--;
             pendingBadConsequence.setnVisibleTreasures(n);
-            
+           }
       }
        
       dieIfNoTreasures();
@@ -334,10 +335,12 @@ public class Player {
       
       if((pendingBadConsequence != null) && (!pendingBadConsequence.isEmpty())){
             pendingBadConsequence.substractHiddenTreasure(t);
+        if(pendingBadConsequence.getnHiddenTreasures() > 0){
             int n = pendingBadConsequence.getnHiddenTreasures();
             n--;
             pendingBadConsequence.setnHiddenTreasures(n);
             
+            }
       }
        
       dieIfNoTreasures();
