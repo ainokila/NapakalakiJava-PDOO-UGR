@@ -20,6 +20,9 @@ public class CardDealer {
     private ArrayList<Monster> unusedMonster ;
     private ArrayList<Monster> usedMonster ;
     
+    private ArrayList<Cultist> unusedCultist;
+    private ArrayList<Cultist> usedCultist;
+    
     
  public static CardDealer getInstance() {
     return instance;
@@ -177,6 +180,15 @@ private void initMonsterCardDeck(){
        unusedMonster.add(new Monster("Bicéfalo" ,20 , badConsequence19, prize19));
     
 }
+
+private void initCultistCardDeck(){
+    //Aniadir cultist
+}
+
+private void shuffleCultist(){
+    Collections.shuffle(unusedCultist);
+}
+
 private void shuffleTreasures(){
     Collections.shuffle(unusedTreasures);
       
@@ -185,6 +197,9 @@ private void shuffleMonsters(){
     Collections.shuffle(unusedMonster);
 }
 
+public Cultist nextCultist(){
+    
+}
 public Treasure nextTreasure(){
     
     if(unusedTreasures.isEmpty()){

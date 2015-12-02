@@ -16,6 +16,7 @@ public class Monster {
     private int combatLevel; //Nivel del monstruo.
     private BadConsequence badConse; // Representa el mal rollo del monstruo.
     private Prize price; //Representa el buen rollo del monstruo.
+    private int levelChangeAgainstCultistPlayer = 0 ;
 
     public Monster(String name, int level, BadConsequence bc, Prize price){
     
@@ -44,6 +45,12 @@ public class Monster {
     
     public int getTreasuresGained(){
         return price.getTreasures();
+    }
+    
+    public int getCombatLevelAgainstCultistPlayer(){
+        int valor ;
+        valor = this.getCombatLevel() + this.levelChangeAgainstCultistPlayer;
+        return valor;
     }
     
     

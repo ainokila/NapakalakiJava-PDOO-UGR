@@ -144,6 +144,14 @@ public CombatResult developCombat(){
     Monster m = currentMonster;
     CombatResult combatResult = currentPlayer.combat(m);
     
+    if(combatResult == CombatResult.LOSEANDCONVERT){
+        
+       Cultist nueva =  dealer.nextCultist();
+       CultistPlayer nuevoJ = new CultistPlayer(currentPlayer, nueva);
+       int posicion = players.indexOf(currentPlayer);
+       players.set(posicion, nuevoJ);
+    }
+    
     dealer.giveMonsterBack(m);
     
     return combatResult;  

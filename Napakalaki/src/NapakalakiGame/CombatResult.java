@@ -11,7 +11,7 @@ package NapakalakiGame;
  */
 public enum CombatResult {
     
-    WINGAME, WIN, LOSE;
+    WINGAME, WIN, LOSE,LOSEANDCONVERT;
     
     
     @Override
@@ -25,6 +25,8 @@ public enum CombatResult {
             case WIN :  solucion = "WIN";
                           break;
             case LOSE:  solucion = "LOSE";
+                          break;
+            case LOSEANDCONVERT: solucion = "LOSEANDCONVERT";
                           break;
            default: solucion = "Invalid CombatResult";
                      break;

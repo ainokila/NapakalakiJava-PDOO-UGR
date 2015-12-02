@@ -22,7 +22,7 @@ public class Player {
  private boolean canISteal = true;
  private ArrayList<Treasure> hiddenTreasures = new ArrayList();
  private ArrayList<Treasure> visibleTreasures = new ArrayList();
- private Player enemy;
+ protected Player enemy;
  private BadConsequence pendingBadConsequence = new BadConsequence("",0,0,0);
  
  
@@ -30,6 +30,32 @@ public class Player {
      
      name = nombre;
      level = 1 ;
+ }
+ 
+  public Player (Player p){
+     
+     name = p.name;
+     level = p.level;
+     dead = p.dead;
+     canISteal = p.canISteal;
+     hiddenTreasures = (ArrayList<Treasure>) (p.hiddenTreasures).clone();
+     visibleTreasures =  (ArrayList<Treasure>) (p.visibleTreasures).clone();
+     enemy = p.enemy;
+     pendingBadConsequence = p.pendingBadConsequence;
+     
+ }
+  
+ protected int getOponentLevel(Monster m ){
+     return m.getCombatLevel();
+ }
+ 
+ protected boolean shouldConvert(){
+     int dado = Dice.getInstance().nextNumber();
+     boolean sol = false;
+     if(dado == 1){
+         sol = true;
+     }
+     return sol;
  }
  
  
@@ -84,7 +110,7 @@ public class Player {
     return solucion;
  }
  
- private int getCombatLevel(){
+ protected int getCombatLevel(){
      
         int combatLevel = getLevelTreasures();
         combatLevel = combatLevel + level;
@@ -414,7 +440,7 @@ public class Player {
   public CombatResult combat(Monster m){
       CombatResult combatResult;
       int myLevel = getCombatLevel();
-      int monsterLevel = m.getCombatLevel();
+      int monsterLevel = this.getOponentLevel(m);
       
       if(myLevel > monsterLevel){
           this.applyPrize(m);
@@ -431,7 +457,11 @@ public class Player {
           
           this.applyBadConsequence(m);
           dieIfNoTreasures();
-          combatResult = CombatResult.LOSE;
+          if(this.shouldConvert()){
+             combatResult = CombatResult.LOSEANDCONVERT; 
+          }else{
+            combatResult = CombatResult.LOSE;
+          }
       }
       
       return combatResult;
