@@ -110,7 +110,7 @@ private void initMonsterCardDeck(){
        unusedMonster.add(new Monster("H.P. Munchcraft", 6 , badConsequence6, prize6));
        
        //Monstruo 7    ******************************************************************
-       BadConsequence badConsequence7 = new BadConsequence("Sientes bichos bajo la ropa. Descarta tu armadura visibl.e", 0 ,new ArrayList(Arrays.asList(TreasureKind.ARMOR)),
+       BadConsequence badConsequence7 = new BadConsequence("Sientes bichos bajo la ropa. Descarta tu armadura visible.", 0 ,new ArrayList(Arrays.asList(TreasureKind.ARMOR)),
                new ArrayList(Arrays.asList())); 
        Prize prize7 = new Prize(1,1);
        unusedMonster.add(new Monster("Bichgooth", 2 , badConsequence7, prize7));
@@ -174,15 +174,62 @@ private void initMonsterCardDeck(){
        unusedMonster.add(new Monster("El lenguas" ,20 , badConsequence18, prize18));
        
        //Monstruo 19    ******************************************************************
-       BadConsequence badConsequence19 = new BadConsequence("Te faltan manos para tanta cabeza. Pierdes 2 niveles y tus tesoros visibles de las manos." ,3 ,
+       BadConsequence badConsequence19 = new BadConsequence("Te faltan manos para tanta cabeza. Pierdes 2 niveles y tus tesoros visibles de las manos." ,2 ,
                new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS,TreasureKind.ONEHAND,TreasureKind.ONEHAND)),new ArrayList(Arrays.asList()));
        Prize prize19 = new Prize(1,1);
        unusedMonster.add(new Monster("Bicéfalo" ,20 , badConsequence19, prize19));
+       
+       //______________________________________MONSTRUOS CON SECTARIOS______________________________________
+       
+       
+       //Monstruo Con Sectario 1   ******************************************************************
+       BadConsequence badConsequence20 = new BadConsequence("Pierdes una mano visible" ,0 ,
+               new ArrayList(Arrays.asList(TreasureKind.ONEHAND)),new ArrayList(Arrays.asList()));
+       Prize prize20 = new Prize(3,1);
+       unusedMonster.add(new Monster("El mal indecible impronunciable." ,10 , badConsequence20, prize20, -2));
+       
+       //Monstruo Con Sectario 2   ******************************************************************
+       BadConsequence badConsequence21 = new BadConsequence("Pierdes tus tesoros visibles. Jajaja" ,0 ,5,0);
+       Prize prize21 = new Prize(2,1);
+       unusedMonster.add(new Monster("Testigos Oculares." ,6 , badConsequence21, prize21, +2));
+       
+       //Monstruo Con Sectario 3    ******************************************************************
+       BadConsequence badConsequence22 = new BadConsequence("Hoy no es tu día de suerte. Mueres." ,true ); 
+       Prize prize22 = new Prize(2,5);
+       unusedMonster.add(new Monster("El gran cthulhu.  ",20 , badConsequence22, prize22,+4));
+       
+       //Monstruo Con Sectario 4    ******************************************************************
+       BadConsequence badConsequence23 = new BadConsequence("Tu gobierno te recorta dos niveles." ,2 ,0,0);
+       Prize prize23 = new Prize(2,1);
+       unusedMonster.add(new Monster("Serpiente político." ,8 , badConsequence23, prize23, -2));
+       
+       //Monstruo Con Sectario 5    ******************************************************************
+       BadConsequence badConsequence24 = new BadConsequence("Pierdes tu casco y armadura visible. Pierdes tus manos ocultas." ,0 ,
+               new ArrayList(Arrays.asList(TreasureKind.HELMET,TreasureKind.ARMOR)),new ArrayList(Arrays.asList(TreasureKind.BOTHHANDS,TreasureKind.ONEHAND,TreasureKind.ONEHAND)));
+       Prize prize24  = new Prize(1,1);
+       unusedMonster.add(new Monster("Felpuggoth." ,2 , badConsequence24, prize24, +5));
+       
+       //Monstruo Con Sectario 6   ******************************************************************
+       BadConsequence badConsequence25 = new BadConsequence("Pierdes dos niveles." ,2 ,0,0);
+       Prize prize25 = new Prize(4,2);
+       unusedMonster.add(new Monster("Shoggoth." ,16 , badConsequence25, prize25, -4));
+       
+       //Monstruo Con Sectario 7   ******************************************************************
+       BadConsequence badConsequence26 = new BadConsequence("Pintalabios negro. Pierdes dos niveles." ,2 ,0,0);
+       Prize prize26 = new Prize(1,1);
+       unusedMonster.add(new Monster("Lolitaggoth." ,2 , badConsequence26, prize26, +3));
+    
     
 }
 
 private void initCultistCardDeck(){
-    //Aniadir cultist
+    
+    unusedCultist.add(new Cultist("Sectario", 1));
+    unusedCultist.add(new Cultist("Sectario", 2));
+    unusedCultist.add(new Cultist("Sectario", 1));
+    unusedCultist.add(new Cultist("Sectario", 2));
+    unusedCultist.add(new Cultist("Sectario", 1));
+    unusedCultist.add(new Cultist("Sectario", 1));
 }
 
 private void shuffleCultist(){
@@ -198,8 +245,22 @@ private void shuffleMonsters(){
 }
 
 public Cultist nextCultist(){
+    if(unusedCultist.isEmpty()){
+        
+        for(Cultist c : usedCultist){
+            unusedCultist.add(c);
+        }
+        shuffleCultist();
+        
+    }
     
+    Cultist auxiliar = this.unusedCultist.get(0);
+    usedCultist.add(auxiliar);
+    unusedCultist.remove(auxiliar);
+    
+    return auxiliar;
 }
+
 public Treasure nextTreasure(){
     
     if(unusedTreasures.isEmpty()){
@@ -248,8 +309,10 @@ public void initCards(){
     
     this.initTreasureCardDeck();
     this.initMonsterCardDeck();
+    this.initCultistCardDeck();
     shuffleTreasures();
     shuffleMonsters();
+    shuffleCultist();
 }
     
 }

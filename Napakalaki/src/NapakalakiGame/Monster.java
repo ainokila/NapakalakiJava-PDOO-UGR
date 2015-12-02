@@ -26,6 +26,17 @@ public class Monster {
         this.price = price;        
         
     }
+     
+    public Monster(String name, int level, BadConsequence bc, Prize price, int IC){
+    
+        this.name = name;
+        combatLevel = level;
+        badConse = bc;
+        this.price = price;  
+        this.levelChangeAgainstCultistPlayer = IC;
+        
+    }
+     
              
     public String getName() {
         return name;
