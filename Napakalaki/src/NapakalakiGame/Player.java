@@ -312,6 +312,7 @@ public class Player {
               treasure=enemy.giveMeATreasure();
               this.hiddenTreasures.add(treasure);
               enemy.hiddenTreasures.remove(treasure);
+              enemy.dieIfNoTreasures();
               this.haveStolen();
           }
       }
