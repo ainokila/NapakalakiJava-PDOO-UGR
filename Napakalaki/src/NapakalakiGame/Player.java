@@ -363,17 +363,27 @@ public class Player {
   }
   
   public void discardAllTreasures(){
-      /*Nos deja siempre 1 sin borrar , solucion provisional
+      
+      
+      ArrayList<Treasure> visible = new ArrayList();
+      ArrayList<Treasure> oculto = new ArrayList();
+     
+      //Primero hacemos una copia, y después los borramos.
       for(int i =0; i< visibleTreasures.size(); i++){
-          this.discardVisibleTreasure(visibleTreasures.get(i));
+          visible.add(visibleTreasures.get(i));
+      }
+      
+       for(int i =0; i< visible.size(); i++){
+           this.discardVisibleTreasure(visible.get(i));
       }
       
       for(int i =0; i< hiddenTreasures.size(); i++){
-          this.discardHiddenTreasure(hiddenTreasures.get(i));
-      }*/
-      this.hiddenTreasures.clear();
-      this.visibleTreasures.clear();
-      this.pendingBadConsequence = new BadConsequence("",0,0,0);
+          oculto.add(hiddenTreasures.get(i));
+      }
+      
+       for(int i =0; i< oculto.size(); i++){
+           this.discardHiddenTreasure(oculto.get(i));
+      }
       dieIfNoTreasures();
       
   }

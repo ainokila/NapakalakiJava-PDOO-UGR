@@ -115,7 +115,7 @@ public class BadConsequence {
      @Override
      public String toString(){
 
-        String solucion = " " + text + "\nDetalles: " +" Perder " + levels +  Integer.toString(nVisibleTreasures) +  " tesoros visibles y  "  +  Integer.toString(nHiddenTreasures) +  " tesoros ocultos.\n"
+        String solucion = " " + text + "\nDetalles: " +" Perder " + levels + " niveles, " +  Integer.toString(nVisibleTreasures) +  " tesoros visibles y  "  +  Integer.toString(nHiddenTreasures) +  " tesoros ocultos.\n"
                 +  "Tipo de Tesoro Visible: " + auxiliarString(specificVisibleTreasures)+", "
                 + "Tipo de Tesoro Oculto: " + auxiliarString(specificHiddenTreasures) + " ."
                 + "\nMuerte:  " + death ;                    
