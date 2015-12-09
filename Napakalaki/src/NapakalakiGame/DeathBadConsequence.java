@@ -13,8 +13,8 @@ public class DeathBadConsequence extends NumericBadConsequence {
     
     private boolean death; //Representa un Mal Rollo de tipo Muerte.
 
-    public DeathBadConsequence(String text, int levels,boolean death,int nVisible, int nHidden) {
-        super(text, levels,nVisible,nHidden);
+    public DeathBadConsequence(String text,boolean death) {
+        super(text,0,0,0);
         this.death = death;
     }
     
