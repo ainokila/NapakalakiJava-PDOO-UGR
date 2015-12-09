@@ -32,6 +32,8 @@ public class Player {
      level = 1 ;
  }
  
+ 
+ 
   public Player (Player p){
      
      name = p.name;
@@ -83,6 +85,10 @@ public class Player {
  public String getName(){
      
      return name;
+ }
+ 
+ protected Player getEnemy(){
+     return enemy;
  }
  
  public ArrayList<Treasure> getVisibleTreasures(){
