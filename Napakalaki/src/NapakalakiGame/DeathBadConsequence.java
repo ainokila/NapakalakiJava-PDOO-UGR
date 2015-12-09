@@ -9,11 +9,18 @@ package NapakalakiGame;
  *
  * @author ainokila
  */
-public class DeathBadConsequence {
+public class DeathBadConsequence extends NumericBadConsequence {
     
     private boolean death; //Representa un Mal Rollo de tipo Muerte.
-    private static final int MAXTREASURES = 10;
+
+    public DeathBadConsequence(String text, int levels,boolean death,int nVisible, int nHidden) {
+        super(text, levels,nVisible,nHidden);
+        this.death = death;
+    }
     
-    private String text=""; // Representa lo que dice un Mal Rollo.
-    private int levels; //Representa el numero de niveles que se pierden.
+    public boolean isDeath() {
+        
+        return death;
+    }
+    
 }

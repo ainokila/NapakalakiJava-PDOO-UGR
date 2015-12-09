@@ -298,6 +298,10 @@ public Monster nextMonster(){
     return auxiliar;
     
 }
+
+public void giveCultistBack(Cultist c){
+    this.usedCultist.add(c);
+}
 public void giveTreasureBack(Treasure t){
     this.usedTreasures.add(t);
 }
