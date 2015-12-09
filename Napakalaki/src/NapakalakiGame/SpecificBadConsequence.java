@@ -88,6 +88,7 @@ public class SpecificBadConsequence extends BadConsequence {
         }
      }
      
+     @Override
      public  BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v , ArrayList<Treasure> h){
             
          BadConsequence solucion;            
