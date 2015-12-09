@@ -52,6 +52,7 @@ public class Player {
  protected boolean shouldConvert(){
      int dado = Dice.getInstance().nextNumber();
      boolean sol = false;
+     System.out.print(dado);
      if(dado == 1){
          sol = true;
      }

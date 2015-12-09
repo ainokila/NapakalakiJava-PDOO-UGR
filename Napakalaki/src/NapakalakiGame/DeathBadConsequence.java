@@ -18,6 +18,7 @@ public class DeathBadConsequence extends NumericBadConsequence {
         this.death = death;
     }
     
+    @Override
     public boolean isDeath() {
         
         return death;

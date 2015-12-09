@@ -22,6 +22,6 @@ public static Dice getInstance(){
 }
 public int nextNumber(){
     
-    return (int) Math.random()*5+1;
+    return (int) (Math.random() * 5 + 1);
 }
 }

@@ -42,7 +42,30 @@ public class SpecificBadConsequence extends BadConsequence {
         return solucion;
         
     }
+          
+     @Override
+     public boolean isDeath(){
      
+       return false;
+     }
+    
+     @Override
+     public void setnVisibleTreasures(int n){}
+    
+     @Override
+     public void setnHiddenTreasures(int n){}
+    
+     @Override
+     public int getnVisibleTreasures(){
+         return 0;
+     }
+    
+     @Override
+     public int getnHiddenTreasures(){
+         return 0;
+     }
+    
+     @Override
      public void substractVisibleTreasure(Treasure t){
         
         for(int i =0; i< specificVisibleTreasures.size(); i++){
@@ -54,6 +77,7 @@ public class SpecificBadConsequence extends BadConsequence {
     
      }
      
+     @Override
      public void substractHiddenTreasure(Treasure t){
          
          for(int i =0; i< specificHiddenTreasures.size(); i++){

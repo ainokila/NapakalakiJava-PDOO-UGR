@@ -16,7 +16,7 @@ public enum CombatResult {
     
     @Override
     public String toString(){
-    String solucion ="";
+    String solucion;
     switch (this) {
         
     

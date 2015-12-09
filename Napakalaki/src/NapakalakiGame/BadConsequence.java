@@ -50,9 +50,21 @@ public abstract class BadConsequence {
 
      }
      
+    public abstract boolean isDeath();
+    
+    public abstract void setnVisibleTreasures(int n);
+    
+    public abstract void setnHiddenTreasures(int n);
+    
+    public abstract int getnVisibleTreasures();
+    
+    public abstract int getnHiddenTreasures();
+    
+    public abstract void substractVisibleTreasure(Treasure t);
      
-     
-     public abstract  BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v , ArrayList<Treasure> h);
+    public abstract void substractHiddenTreasure(Treasure t);
+        
+    public abstract  BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v , ArrayList<Treasure> h);
             
         
  

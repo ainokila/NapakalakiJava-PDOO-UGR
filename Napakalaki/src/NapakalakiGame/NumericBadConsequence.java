@@ -22,21 +22,37 @@ public class NumericBadConsequence extends BadConsequence  {
         this.nHiddenTreasures = nHidden;
     }
     
+    @Override
+    public boolean isDeath() {
+        
+        return false;
+    }
+    
+    @Override
+    public void substractVisibleTreasure(Treasure t){}
+    
+    @Override
+    public void substractHiddenTreasure(Treasure t){}
+    
+    @Override
     public void setnVisibleTreasures(int n) {
         
         nVisibleTreasures = n;
     }
 
+    @Override
     public void setnHiddenTreasures(int n) {
         
         nHiddenTreasures = n;
     }
     
-        public int getnVisibleTreasures() {
+    @Override
+    public int getnVisibleTreasures() {
         
         return nVisibleTreasures;
     }
 
+    @Override
     public int getnHiddenTreasures() {
         
         return nHiddenTreasures;
@@ -55,6 +71,7 @@ public class NumericBadConsequence extends BadConsequence  {
 
      }
     
+    @Override
     public  BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v , ArrayList<Treasure> h){
             
          BadConsequence solucion;
@@ -90,7 +107,7 @@ public class NumericBadConsequence extends BadConsequence  {
 
         String solucion = " " + super.getText() + "\nDetalles: " +" Perder " + super.getLevels() + " niveles. "
                 +  "\n" + Integer.toString(nVisibleTreasures)+" tesoros visibles,  "
-                + "\n" + Integer.toString(nHiddenTreasures) + "tesoros ocultos ."
+                + Integer.toString(nHiddenTreasures) + " tesoros ocultos ."
                 ;                    
       return solucion;
       }
