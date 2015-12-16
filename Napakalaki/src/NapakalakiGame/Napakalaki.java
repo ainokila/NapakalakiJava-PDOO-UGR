@@ -150,7 +150,15 @@ public CombatResult developCombat(){
        CultistPlayer nuevoJ = new CultistPlayer(currentPlayer, nueva);
        int posicion = players.indexOf(currentPlayer);
        players.set(posicion, nuevoJ);
+       
+       for(Player p : players){
+            if(p.getEnemy() == currentPlayer){
+                p.setEnemyPlayer(nuevoJ);
+            }
+        }
     }
+    
+    
     
     dealer.giveMonsterBack(m);
     
