@@ -38,7 +38,7 @@ public abstract class BadConsequence {
          this.levels = l;
     }
     
-     public boolean isEmpty(){
+    public boolean isEmpty(){
          
                 
          boolean solucion = false;

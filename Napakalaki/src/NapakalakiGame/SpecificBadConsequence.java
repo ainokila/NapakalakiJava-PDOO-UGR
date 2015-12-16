@@ -116,6 +116,18 @@ public class SpecificBadConsequence extends BadConsequence {
          
     return solucion;
  }
+     @Override
+     public boolean isEmpty(){
+         
+                
+         boolean solucion = false;
+         if(super.getText() == "" && super.getLevels() == 0 && specificHiddenTreasures.isEmpty() && specificVisibleTreasures.isEmpty() ){
+                    solucion = true;
+         }
+        
+      return solucion;
+
+     }
      
      @Override
      public String toString(){
