@@ -184,7 +184,7 @@ public Monster getCurrentMonster(){
 public boolean endOfGame(CombatResult result){
         
         boolean resultado=false;
-    if(result.toString() == "WINGAME"){
+    if(result.toString().equals("WINGAME")){
             resultado = true;
     }
     
