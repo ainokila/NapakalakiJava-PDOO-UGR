@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package NapakalakiGame;
 
-/**
- *
- * @author ainokila
- */
+package NapakalakiGame;
+import GUI.Dice;
+
+
 public class CultistPlayer extends Player{
-    private static int totaCultistPlayers = 0;
+    private static int totalCultistPlayers = 0;
     private Cultist myCultistCard ;
        
     public CultistPlayer(Player p ,Cultist c){
@@ -21,22 +20,35 @@ public class CultistPlayer extends Player{
     @Override
     protected int getCombatLevel(){
         int sol ;
-        
+        //INICIO EXAMEN
         sol = super.getCombatLevel() ;
-        sol = sol * 120;
-        sol = sol / 100;
-        sol = sol + (myCultistCard.getGainedLevels()*totaCultistPlayers);
+        sol = sol + (myCultistCard.getGainedLevels()*totalCultistPlayers);
         return sol;
+        //FIN EXAMEN
     }
     
     @Override
     protected int getOponentLevel(Monster m){
-        return m.getCombatLevelAgainstCultistPlayer();
+        int solucion;
+        //INICIO EXAMEN
+        solucion = m.getCombatLevelAgainstCultistPlayer()+ totalCultistPlayers;
+        //FIN EXAMEN
+        return solucion;
+        
     }
    
     @Override
     protected boolean shouldConvert(){
-        return false;
+      Dice dice = Dice.getInstance();
+      boolean solucion = false;
+      int number = dice.nextNumber();
+      //INICIO EXAMEN
+      
+      if (number == 3){
+          solucion =true;
+      }
+      //FIN EXAMEN
+      return solucion;
     }
     
     
@@ -62,7 +74,7 @@ public class CultistPlayer extends Player{
   }
     
     public int getTotalCultistPlayers(){
-        return totaCultistPlayers;
+        return totalCultistPlayers;
     }
     
 }

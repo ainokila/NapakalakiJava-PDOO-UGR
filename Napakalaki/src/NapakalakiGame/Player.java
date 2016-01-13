@@ -5,14 +5,12 @@
  */
 package NapakalakiGame;
 
+import GUI.Dice;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 
-/**
- *
- * @author ainokila
- */
+
 public class Player {
     
  private static final int MAXLEVEL = 10;
