@@ -85,8 +85,13 @@ public class Player {
      return name;
  }
  
- protected Player getEnemy(){
+ //Preguntar
+ public Player getEnemy(){
      return enemy;
+ }
+ 
+ public BadConsequence getPendingBadConsequence(){
+     return pendingBadConsequence;
  }
  
  public ArrayList<Treasure> getVisibleTreasures(){

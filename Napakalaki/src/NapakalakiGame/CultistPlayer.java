@@ -20,19 +20,21 @@ public class CultistPlayer extends Player{
     @Override
     protected int getCombatLevel(){
         int sol ;
-        //INICIO EXAMEN
+        
         sol = super.getCombatLevel() ;
+        sol= sol*120;
+        sol = sol/100;
         sol = sol + (myCultistCard.getGainedLevels()*totalCultistPlayers);
         return sol;
-        //FIN EXAMEN
+       
     }
     
     @Override
     protected int getOponentLevel(Monster m){
         int solucion;
-        //INICIO EXAMEN
-        solucion = m.getCombatLevelAgainstCultistPlayer()+ totalCultistPlayers;
-        //FIN EXAMEN
+       
+        solucion = m.getCombatLevelAgainstCultistPlayer();
+        
         return solucion;
         
     }
@@ -42,12 +44,11 @@ public class CultistPlayer extends Player{
       Dice dice = Dice.getInstance();
       boolean solucion = false;
       int number = dice.nextNumber();
-      //INICIO EXAMEN
-      
-      if (number == 3){
+          
+      if (number == 1){
           solucion =true;
       }
-      //FIN EXAMEN
+  
       return solucion;
     }
     

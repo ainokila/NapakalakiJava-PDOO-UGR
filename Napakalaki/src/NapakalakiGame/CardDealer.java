@@ -256,19 +256,15 @@ public Cultist nextCultist(){
         shuffleCultist();
         
     }
-    //INICIO EXAMEN
-    /*
+    
+    
     Cultist auxiliar = this.unusedCultist.get(0);
     usedCultist.add(auxiliar);
     unusedCultist.remove(auxiliar);
-*/
-    int nivel = (int) (Math.random() * 19 + 1);
-    
-    Cultist auxiliar = new Cultist("Jorge", nivel); 
-    
+
     return auxiliar;
 }
-     //FIN EXAMEN
+     
 public Treasure nextTreasure(){
     
     if(unusedTreasures.isEmpty()){
