@@ -5,8 +5,10 @@
  */
 package GUI;
 
+import NapakalakiGame.Napakalaki;
 import NapakalakiGame.Player;
 import NapakalakiGame.Treasure;
+import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
@@ -23,7 +25,8 @@ public class PlayerView extends javax.swing.JPanel {
      * Creates new form PlayerView
      */
     private Player playerModel;
-    
+    private Napakalaki napakalakiModel;
+        
     public PlayerView() {
         //Inicio estil 
         try {
@@ -85,10 +88,25 @@ public class PlayerView extends javax.swing.JPanel {
         ocultos.setBorder(new javax.swing.border.MatteBorder(null));
 
         steal.setText("Steal");
+        steal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stealActionPerformed(evt);
+            }
+        });
 
         discardTreasures.setText("Discard");
+        discardTreasures.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                discardTreasuresActionPerformed(evt);
+            }
+        });
 
         discardAll.setText("Discard All");
+        discardAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                discardAllActionPerformed(evt);
+            }
+        });
 
         makeV.setText("Make Visible");
         makeV.addActionListener(new java.awt.event.ActionListener() {
@@ -193,8 +211,25 @@ public class PlayerView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void makeVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_makeVActionPerformed
-        // TODO add your handling code here:
+        
+        ArrayList<Treasure> selHidden = getSelectedTreasures (ocultos);
+        napakalakiModel.makeTreasuresVisible (selHidden);
+        setPlayer(napakalakiModel.getCurrentPlayer());
+        
     }//GEN-LAST:event_makeVActionPerformed
+
+    private void stealActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stealActionPerformed
+        playerModel.stealTreasure();
+        setPlayer(napakalakiModel.getCurrentPlayer());
+    }//GEN-LAST:event_stealActionPerformed
+
+    private void discardTreasuresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_discardTreasuresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_discardTreasuresActionPerformed
+
+    private void discardAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_discardAllActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_discardAllActionPerformed
 
     public void setPlayer(Player p){
         playerModel = p;
@@ -221,6 +256,25 @@ public class PlayerView extends javax.swing.JPanel {
         revalidate();
         
     }
+    
+    public void setNapakalaki(Napakalaki nuevo){
+        napakalakiModel = nuevo;
+    }
+    
+    private ArrayList<Treasure> getSelectedTreasures(JPanel aPanel) {
+        // Se recorren los tesoros que contiene el panel,
+        //almacenando en un vector aquellos que están seleccionados.
+        //Finalmente se devuelve dicho vector.
+        TreasureView tv;
+        ArrayList<Treasure> output = new ArrayList();
+        for (Component c : aPanel.getComponents()) {
+        tv = (TreasureView) c;
+        if ( tv.isSelected() )
+        output.add ( tv.getTreasure() );
+        }
+        return output;
+    }
+    
     
     private void fillTreasurePanel (JPanel aPanel, ArrayList<Treasure> aList) {
     // Se elimina la información antigua, si la hubiera
