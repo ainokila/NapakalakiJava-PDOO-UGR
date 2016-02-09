@@ -5,6 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 import javax.swing.Timer;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 /**
  *
@@ -21,6 +24,15 @@ public class Dice extends javax.swing.JDialog {
     super(parent, true);
     
     initComponents();
+         //Inicio estilo 
+        try {
+            // Set cross-platform Java L&F (also called "Metal")
+        UIManager.setLookAndFeel(new NimbusLookAndFeel());
+        } 
+        catch (UnsupportedLookAndFeelException e) {
+        // handle exception
+        }
+        //Fin inicio estilo
     timerDice = new Timer (50,diceAction);
     this.addWindowListener(new java.awt.event.WindowAdapter() {
       @Override

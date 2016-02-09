@@ -5,6 +5,10 @@
  */
 package GUI;
 
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+
 /**
  *
  * @author ainokila
@@ -15,6 +19,15 @@ public class PendingBadConsequenceView extends javax.swing.JPanel {
      * Creates new form PendingBadConsequenceView
      */
     public PendingBadConsequenceView() {
+        //Inicio estilo 
+        try {
+            // Set cross-platform Java L&F (also called "Metal")
+        UIManager.setLookAndFeel(new NimbusLookAndFeel());
+        } 
+        catch (UnsupportedLookAndFeelException e) {
+        // handle exception
+        }
+        //Fin inicio estilo
         initComponents();
     }
 

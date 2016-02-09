@@ -7,6 +7,9 @@ package GUI;
 
 
 import NapakalakiGame.*;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 /**
  *
  * @author saytes
@@ -18,6 +21,15 @@ public class NapakalakiView extends javax.swing.JFrame {
      * Creates new form NapakalakiView
      */
     public NapakalakiView() {
+        //Inicio estilo 
+        try {
+            // Set cross-platform Java L&F (also called "Metal")
+        UIManager.setLookAndFeel(new NimbusLookAndFeel());
+        } 
+        catch (UnsupportedLookAndFeelException e) {
+        // handle exception
+        }
+        //Fin inicio estilo
         initComponents();
     }
     
