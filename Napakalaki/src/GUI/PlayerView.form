@@ -199,16 +199,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Steal"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="stealActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="discardTreasures">
       <Properties>
         <Property name="text" type="java.lang.String" value="Discard"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="discardTreasuresActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="discardAll">
       <Properties>
         <Property name="text" type="java.lang.String" value="Discard All"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="discardAllActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="makeV">
       <Properties>
