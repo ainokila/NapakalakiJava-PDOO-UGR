@@ -91,6 +91,11 @@ public class PlayerView extends javax.swing.JPanel {
         discardAll.setText("Discard All");
 
         makeV.setText("Make Visible");
+        makeV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                makeVActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -186,6 +191,10 @@ public class PlayerView extends javax.swing.JPanel {
                 .addGap(33, 33, 33))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void makeVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_makeVActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_makeVActionPerformed
 
     public void setPlayer(Player p){
         playerModel = p;

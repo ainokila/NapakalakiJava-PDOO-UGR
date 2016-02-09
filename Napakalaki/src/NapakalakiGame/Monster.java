@@ -58,6 +58,10 @@ public class Monster {
         return price.getTreasures();
     }
     
+    public Prize getPrize(){
+        return price;
+    }
+    
     public int getCombatLevelAgainstCultistPlayer(){
         int valor ;
         valor = this.getCombatLevel() + this.levelChangeAgainstCultistPlayer;
