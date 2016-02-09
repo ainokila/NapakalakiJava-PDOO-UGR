@@ -111,5 +111,15 @@ public class NumericBadConsequence extends BadConsequence  {
                 ;                    
       return solucion;
       }
+     
+     public String toStringPendingVisible(){
+         String solucion = Integer.toString(nVisibleTreasures);
+         return solucion;
+     }
+     
+     public String toStringPendingOculto(){
+         String solucion = Integer.toString(nHiddenTreasures);
+         return solucion;
+     }
   
 }

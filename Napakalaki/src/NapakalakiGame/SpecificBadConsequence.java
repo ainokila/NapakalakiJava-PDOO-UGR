@@ -138,5 +138,15 @@ public class SpecificBadConsequence extends BadConsequence {
                 ;                    
       return solucion;
       }
+     
+     public String toStringPendingVisible(){
+         String solucion = auxiliarString(specificVisibleTreasures);
+         return solucion;
+     }
+     
+     public String toStringPendingOculto(){
+         String solucion = auxiliarString(specificHiddenTreasures);
+         return solucion;
+     }
     
 }

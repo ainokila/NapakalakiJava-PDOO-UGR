@@ -52,7 +52,6 @@ public class PlayerView extends javax.swing.JPanel {
         canISteal = new javax.swing.JLabel();
         hidden = new javax.swing.JLabel();
         enemy = new javax.swing.JLabel();
-        pendingBad = new javax.swing.JLabel();
         sectario = new javax.swing.JLabel();
         visible = new javax.swing.JLabel();
         visibles = new javax.swing.JPanel();
@@ -73,8 +72,6 @@ public class PlayerView extends javax.swing.JPanel {
         hidden.setText("Tesoros Ocultos");
 
         enemy.setText("jLabel1");
-
-        pendingBad.setText("jLabel1");
 
         sectario.setText("jLabel1");
 
@@ -132,8 +129,7 @@ public class PlayerView extends javax.swing.JPanel {
                                         .addGap(5, 5, 5)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(name)
-                                            .addComponent(sectario)
-                                            .addComponent(pendingBad))))
+                                            .addComponent(sectario))))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -176,15 +172,9 @@ public class PlayerView extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addComponent(discardAll)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                        .addComponent(pendingBad, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(makeV)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(5, 5, 5)
+                .addComponent(makeV)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(canISteal)
                     .addComponent(enemy))
@@ -212,8 +202,7 @@ public class PlayerView extends javax.swing.JPanel {
         this.dead.setText(muerto);
         this.enemy.setText(p.getEnemy().toString());
         this.level.setText(Integer.toString(p.getLevel()));
-        this.pendingBad.setText(p.getPendingBadConsequence().toString());
-           
+            
         this.fillTreasurePanel(visibles, playerModel.getVisibleTreasures());
         this.fillTreasurePanel(ocultos, playerModel.getHiddenTreasures());
         
@@ -249,7 +238,6 @@ public class PlayerView extends javax.swing.JPanel {
     private javax.swing.JButton makeV;
     private javax.swing.JLabel name;
     private javax.swing.JPanel ocultos;
-    private javax.swing.JLabel pendingBad;
     private javax.swing.JLabel sectario;
     private javax.swing.JButton steal;
     private javax.swing.JLabel visible;

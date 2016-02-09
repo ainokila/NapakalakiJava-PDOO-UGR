@@ -55,7 +55,6 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="name" min="-2" max="-2" attributes="0"/>
                                           <Component id="sectario" min="-2" max="-2" attributes="0"/>
-                                          <Component id="pendingBad" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -121,18 +120,9 @@
                       <Component id="discardAll" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace pref="25" max="32767" attributes="0"/>
-                      <Component id="pendingBad" min="-2" pref="20" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="makeV" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-              </Group>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Component id="makeV" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="canISteal" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="enemy" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -169,11 +159,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="enemy">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="pendingBad">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
