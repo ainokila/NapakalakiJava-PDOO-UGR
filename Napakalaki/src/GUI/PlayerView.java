@@ -25,7 +25,7 @@ public class PlayerView extends javax.swing.JPanel {
     private Player playerModel;
     
     public PlayerView() {
-        //Inicio estilo 
+        //Inicio estil 
         try {
             // Set cross-platform Java L&F (also called "Metal")
         UIManager.setLookAndFeel(new NimbusLookAndFeel());
