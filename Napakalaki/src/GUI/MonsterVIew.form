@@ -33,8 +33,9 @@
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="prizeView1" min="-2" max="-2" attributes="0"/>
+              <Component id="badConsequenceView1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="prizeView1" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -47,8 +48,11 @@
                   <Component id="combatLevel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="levelChange" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="184" max="32767" attributes="0"/>
-              <Component id="prizeView1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="162" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="badConsequenceView1" max="32767" attributes="0"/>
+                  <Component id="prizeView1" pref="96" max="32767" attributes="0"/>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -70,6 +74,8 @@
       </Properties>
     </Component>
     <Component class="GUI.PrizeView" name="prizeView1">
+    </Component>
+    <Component class="GUI.BadConsequenceView" name="badConsequenceView1">
     </Component>
   </SubComponents>
 </Form>

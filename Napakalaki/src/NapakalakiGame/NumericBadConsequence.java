@@ -105,9 +105,9 @@ public class NumericBadConsequence extends BadConsequence  {
     @Override
      public String toString(){
 
-        String solucion = " " + super.getText() + "\nDetalles: " +" Perder " + super.getLevels() + " niveles. "
-                +  "\n" + Integer.toString(nVisibleTreasures)+" tesoros visibles,  "
-                + Integer.toString(nHiddenTreasures) + " tesoros ocultos ."
+        String solucion = super.getText() + "\nPierdes " + super.getLevels() + " niveles. "
+                +  "\n" + Integer.toString(nVisibleTreasures)+" tesoros visibles\n"
+                + Integer.toString(nHiddenTreasures) + " tesoros ocultos "
                 ;                    
       return solucion;
       }
