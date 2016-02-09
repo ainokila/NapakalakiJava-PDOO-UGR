@@ -57,12 +57,14 @@ public class PlayerView extends javax.swing.JPanel {
         enemy = new javax.swing.JLabel();
         sectario = new javax.swing.JLabel();
         visible = new javax.swing.JLabel();
-        visibles = new javax.swing.JPanel();
         ocultos = new javax.swing.JPanel();
+        visibles = new javax.swing.JPanel();
         steal = new javax.swing.JButton();
         discardTreasures = new javax.swing.JButton();
         discardAll = new javax.swing.JButton();
         makeV = new javax.swing.JButton();
+        pendingBadConsequenceView1 = new GUI.PendingBadConsequenceView();
+        jLabel1 = new javax.swing.JLabel();
 
         name.setText("jLabel1");
 
@@ -72,17 +74,21 @@ public class PlayerView extends javax.swing.JPanel {
 
         canISteal.setText("jLabel1");
 
+        hidden.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
         hidden.setText("Tesoros Ocultos");
 
         enemy.setText("jLabel1");
 
-        sectario.setText("jLabel1");
+        sectario.setText("Sectario O No");
 
+        visible.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
         visible.setText("Tesoros Visibles");
 
-        visibles.setBorder(new javax.swing.border.MatteBorder(null));
-
+        ocultos.setBackground(new java.awt.Color(153, 255, 255));
         ocultos.setBorder(new javax.swing.border.MatteBorder(null));
+
+        visibles.setBackground(new java.awt.Color(204, 255, 204));
+        visibles.setBorder(new javax.swing.border.MatteBorder(null));
 
         steal.setText("Steal");
         steal.addActionListener(new java.awt.event.ActionListener() {
@@ -112,97 +118,102 @@ public class PlayerView extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
+        jLabel1.setText("Oponente:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(canISteal, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(42, 42, 42)
+                .addComponent(enemy, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(117, 117, 117)
+                .addComponent(visible)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(hidden)
+                .addGap(115, 115, 115))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(383, 383, 383)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sectario, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(dead, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(level)
+                .addGap(138, 138, 138))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(visible, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(dead))
-                            .addComponent(visibles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(91, 91, 91)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(hidden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ocultos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(enemy))
-                                .addGap(80, 80, 80)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(discardAll, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                                    .addComponent(discardTreasures, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(112, 112, 112)
-                                        .addComponent(level))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(5, 5, 5)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(name)
-                                            .addComponent(sectario))))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(makeV))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(102, 102, 102)
-                                        .addComponent(steal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                        .addGap(58, 58, 58)
+                        .addComponent(visibles, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(164, 164, 164)
+                        .addComponent(ocultos, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(canISteal)))
-                .addGap(24, 24, 24))
+                        .addGap(57, 57, 57)
+                        .addComponent(steal, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(discardTreasures)
+                        .addGap(35, 35, 35)
+                        .addComponent(discardAll)
+                        .addGap(46, 46, 46)
+                        .addComponent(makeV))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(pendingBadConsequenceView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(name)
+                    .addComponent(level)
+                    .addComponent(dead))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(name)
-                        .addComponent(level)
-                        .addComponent(dead))
-                    .addComponent(steal))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sectario)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(sectario)
+                        .addGap(73, 73, 73)
+                        .addComponent(ocultos, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                        .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(hidden)
-                            .addComponent(visible)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(discardTreasures)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ocultos, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                            .addComponent(visibles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(discardAll)))
-                .addGap(5, 5, 5)
-                .addComponent(makeV)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                            .addComponent(visible)
+                            .addComponent(hidden))
+                        .addGap(29, 29, 29)
+                        .addComponent(visibles, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pendingBadConsequenceView1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(steal)
+                    .addComponent(discardTreasures)
+                    .addComponent(discardAll)
+                    .addComponent(makeV))
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(canISteal)
-                    .addComponent(enemy))
+                    .addComponent(enemy)
+                    .addComponent(jLabel1))
                 .addGap(33, 33, 33))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void makeVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_makeVActionPerformed
         
-        ArrayList<Treasure> selHidden = getSelectedTreasures (ocultos);
+        ArrayList<Treasure> selHidden = getSelectedTreasures (visibles);
         napakalakiModel.makeTreasuresVisible (selHidden);
         setPlayer(napakalakiModel.getCurrentPlayer());
         
@@ -214,16 +225,24 @@ public class PlayerView extends javax.swing.JPanel {
     }//GEN-LAST:event_stealActionPerformed
 
     private void discardTreasuresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_discardTreasuresActionPerformed
-        // TODO add your handling code here:
+        ArrayList<Treasure> selv = getSelectedTreasures (ocultos);
+        ArrayList<Treasure> selh = getSelectedTreasures (visibles);
+        napakalakiModel.discardVisibleTreasures(selv);
+        napakalakiModel.discardHiddenTreasures(selh);
+        setPlayer(napakalakiModel.getCurrentPlayer());
     }//GEN-LAST:event_discardTreasuresActionPerformed
 
     private void discardAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_discardAllActionPerformed
-        // TODO add your handling code here:
+        napakalakiModel.discardHiddenTreasures(playerModel.getHiddenTreasures());
+        napakalakiModel.discardVisibleTreasures(playerModel.getVisibleTreasures());
+        setPlayer(napakalakiModel.getCurrentPlayer());
     }//GEN-LAST:event_discardAllActionPerformed
 
     public void setPlayer(Player p){
         playerModel = p;
+        try{
         this.name.setText(p.getName());
+
         String puedes = "Puedes robar.";
         String muerto = "Estás muerto.";
         
@@ -233,16 +252,23 @@ public class PlayerView extends javax.swing.JPanel {
         if (p.canISteal() == false){
             puedes = "Ya has robado.";
         }
+        
+        
         this.canISteal.setText(puedes);
         this.dead.setText(muerto);
-        this.enemy.setText(p.getEnemy().toString());
+        this.enemy.setText(p.getEnemy().getName());
         this.level.setText(Integer.toString(p.getLevel()));
             
-        this.fillTreasurePanel(visibles, playerModel.getVisibleTreasures());
-        this.fillTreasurePanel(ocultos, playerModel.getHiddenTreasures());
+        this.fillTreasurePanel(ocultos, playerModel.getVisibleTreasures());
+        this.fillTreasurePanel(visibles, playerModel.getHiddenTreasures());
         
+        pendingBadConsequenceView1.setPending(p.getPendingBadConsequence());
         repaint();
         revalidate();
+        
+       }catch(Exception e){
+            
+        }
         
     }
     
@@ -288,10 +314,12 @@ public class PlayerView extends javax.swing.JPanel {
     private javax.swing.JButton discardTreasures;
     private javax.swing.JLabel enemy;
     private javax.swing.JLabel hidden;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel level;
     private javax.swing.JButton makeV;
     private javax.swing.JLabel name;
     private javax.swing.JPanel ocultos;
+    private GUI.PendingBadConsequenceView pendingBadConsequenceView1;
     private javax.swing.JLabel sectario;
     private javax.swing.JButton steal;
     private javax.swing.JLabel visible;

@@ -50,31 +50,35 @@ public class BadConsequenceView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        name = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        bad = new javax.swing.JTextArea();
 
-        name.setText("jLabel1");
+        bad.setColumns(20);
+        bad.setRows(5);
+        jScrollPane1.setViewportView(bad);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
-                .addComponent(name)
-                .addGap(93, 93, 93))
+                .addContainerGap(7, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(name)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel name;
+    private javax.swing.JTextArea bad;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
 private void fillTreasurePanel (JPanel aPanel, ArrayList<TreasureKind> aList) {
@@ -95,8 +99,7 @@ private void fillTreasurePanel (JPanel aPanel, ArrayList<TreasureKind> aList) {
     
 public void setBadConsequence(BadConsequence bad){
     this.badConsequenceModel = bad ;
-    
-    this.name.setText(bad.toString());
+    this.bad.setText(bad.toString());
     repaint();
 }
 
