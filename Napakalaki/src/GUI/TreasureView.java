@@ -6,6 +6,7 @@
 package GUI;
 
 import NapakalakiGame.Treasure;
+import java.awt.Color;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
@@ -20,6 +21,8 @@ public class TreasureView extends javax.swing.JPanel {
      * Creates new form TreasureView
      */
     private Treasure treasureModel;
+    private boolean selected = false;
+    
     public TreasureView() {
         //Inicio estilo 
         try {
@@ -33,6 +36,10 @@ public class TreasureView extends javax.swing.JPanel {
         initComponents();
     }
 
+    public boolean isSelected(){
+        return selected;
+    }
+    
     public void setTreasure(Treasure t){
         treasureModel = t;
         this.name.setText(treasureModel.getName());
@@ -40,6 +47,10 @@ public class TreasureView extends javax.swing.JPanel {
         this.type.setText(treasureModel.getType().toString());
         repaint();
         
+    }
+    
+    public Treasure getTreasure(){
+       return treasureModel;
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,6 +64,12 @@ public class TreasureView extends javax.swing.JPanel {
         name = new javax.swing.JLabel();
         bonus = new javax.swing.JLabel();
         type = new javax.swing.JLabel();
+
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         name.setText("jLabel1");
 
@@ -88,6 +105,20 @@ public class TreasureView extends javax.swing.JPanel {
                 .addContainerGap(45, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+             
+       if (!isSelected()){
+           selected = true;
+           setBackground(Color.blue);
+           setOpaque(selected);
+       }else{
+          selected = false;
+          setOpaque(selected);
+       }
+       
+       repaint();
+    }//GEN-LAST:event_formMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
