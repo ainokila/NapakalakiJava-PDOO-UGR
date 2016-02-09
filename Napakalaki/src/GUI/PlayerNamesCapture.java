@@ -32,7 +32,7 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
     
     public PlayerNamesCapture(JFrame parent, boolean modal) {
         super(parent, modal);
-        
+      /*  
         //Inicio estilo 
         try {
             // Set cross-platform Java L&F (also called "Metal")
@@ -41,7 +41,7 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
         catch (UnsupportedLookAndFeelException e) {
         // handle exception
         }
-        //Fin inicio estilo
+        //Fin inicio estilo*/
         
         initComponents();
         this.addWindowListener (new WindowAdapter() {

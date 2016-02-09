@@ -25,13 +25,13 @@ public class Dice extends javax.swing.JDialog {
     
     initComponents();
          //Inicio estilo 
-        try {
+       /* try {
             // Set cross-platform Java L&F (also called "Metal")
         UIManager.setLookAndFeel(new NimbusLookAndFeel());
         } 
         catch (UnsupportedLookAndFeelException e) {
         // handle exception
-        }
+        }9*/
         //Fin inicio estilo
     timerDice = new Timer (50,diceAction);
     this.addWindowListener(new java.awt.event.WindowAdapter() {

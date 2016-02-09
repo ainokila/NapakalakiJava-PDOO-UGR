@@ -24,13 +24,13 @@ public class PrizeView extends javax.swing.JPanel {
     
     public PrizeView() {
         //Inicio estilo 
-        try {
+     /*   try {
             // Set cross-platform Java L&F (also called "Metal")
         UIManager.setLookAndFeel(new NimbusLookAndFeel());
         } 
         catch (UnsupportedLookAndFeelException e) {
         // handle exception
-        }
+        }*/
         //Fin inicio estilo
         initComponents();
     }

@@ -22,13 +22,13 @@ public class NapakalakiView extends javax.swing.JFrame {
      */
     public NapakalakiView() {
         //Inicio estilo 
-        try {
+     /*   try {
             // Set cross-platform Java L&F (also called "Metal")
         UIManager.setLookAndFeel(new NimbusLookAndFeel());
         } 
         catch (UnsupportedLookAndFeelException e) {
         // handle exception
-        }
+        }*/
         //Fin inicio estilo
         initComponents();
     }

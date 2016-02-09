@@ -30,13 +30,13 @@ public class BadConsequenceView extends javax.swing.JPanel {
      */
     public BadConsequenceView() {
         //Inicio estilo 
-        try {
+        /*try {
             // Set cross-platform Java L&F (also called "Metal")
         UIManager.setLookAndFeel(new NimbusLookAndFeel());
         } 
         catch (UnsupportedLookAndFeelException e) {
         // handle exception
-        }
+        }*/
         //Fin inicio estilo
         initComponents();
     }
