@@ -9,6 +9,7 @@ package GUI;
 import NapakalakiGame.*;
 import java.applet.Applet;
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -41,31 +42,26 @@ public class NapakalakiView extends javax.swing.JFrame {
      * Creates new form NapakalakiView
      */
     public NapakalakiView() {
-        //Inicio estilo 
-     /*   try {
-            // Set cross-platform Java L&F (also called "Metal")
-        UIManager.setLookAndFeel(new NimbusLookAndFeel());
-        } 
-        catch (UnsupportedLookAndFeelException e) {
-        // handle exception
-        }*/
-        //Fin inicio estilo
-        initComponents();
+
+       initComponents();
        try{
-      //java.applet.AudioClip ac = Applet.newAudioClip(new URL("file::src/monsters/fondo.wav"));
-      //ac.loop();
-        
+      /*
       String sonido = "./src/monsters/fondo.wav";
       InputStream in = new FileInputStream(sonido);
       AudioStream audio = new AudioStream(in);
-      AudioPlayer.player.start(audio);
-     
+      AudioPlayer.player.start(audio);*/
+      
+      AudioInputStream i = AudioSystem.getAudioInputStream(new File("./src/monsters/fondo.wav"));
+      Clip clip = AudioSystem.getClip();
+      clip.open(i);
+      clip.loop(Clip.LOOP_CONTINUOUSLY);
+
        }
     catch(Exception e)
     {
       System.err.println(e);
     }
-        setTitle("Napakalaki");
+    setTitle("Napakalaki");
         
      
         
