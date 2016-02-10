@@ -188,6 +188,7 @@ public class NapakalakiView extends javax.swing.JFrame {
     private void combatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combatActionPerformed
         combat.setVisible(false);
         nextTurn.setVisible(true);
+        playerView1.cambiarMV(true);
         
         CombatResult r = napakalakiModel.getCurrentPlayer().combat(napakalakiModel.getCurrentMonster());
         //r = CombatResult.LOSEANDCONVERT;
