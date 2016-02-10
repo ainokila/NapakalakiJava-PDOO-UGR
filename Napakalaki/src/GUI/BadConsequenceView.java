@@ -6,16 +6,9 @@
 package GUI;
 
 import NapakalakiGame.BadConsequence;
-import NapakalakiGame.NumericBadConsequence;
-import NapakalakiGame.SpecificBadConsequence;
-import NapakalakiGame.DeathBadConsequence;
-import NapakalakiGame.Treasure;
 import NapakalakiGame.TreasureKind;
 import java.util.ArrayList;
 import javax.swing.JPanel;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 
 /**
@@ -29,15 +22,7 @@ public class BadConsequenceView extends javax.swing.JPanel {
      * Creates new form BadConsequenceView
      */
     public BadConsequenceView() {
-        //Inicio estilo 
-        /*try {
-            // Set cross-platform Java L&F (also called "Metal")
-        UIManager.setLookAndFeel(new NimbusLookAndFeel());
-        } 
-        catch (UnsupportedLookAndFeelException e) {
-        // handle exception
-        }*/
-        //Fin inicio estilo
+
         initComponents();
     }
 

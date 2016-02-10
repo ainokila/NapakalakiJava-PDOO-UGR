@@ -5,18 +5,10 @@
  */
 package GUI;
 
-import com.sun.java.swing.plaf.gtk.GTKLookAndFeel;
-import com.sun.java.swing.plaf.motif.MotifLookAndFeel;
-import com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.swing.JFrame;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.metal.MetalLookAndFeel;
-import javax.swing.plaf.nimbus.NimbusLookAndFeel;
-import javax.swing.plaf.synth.SynthLookAndFeel;
 
 /**
  *
@@ -32,16 +24,7 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
     
     public PlayerNamesCapture(JFrame parent, boolean modal) {
         super(parent, modal);
-      /*  
-        //Inicio estilo 
-        try {
-            // Set cross-platform Java L&F (also called "Metal")
-        UIManager.setLookAndFeel(new NimbusLookAndFeel());
-        } 
-        catch (UnsupportedLookAndFeelException e) {
-        // handle exception
-        }
-        //Fin inicio estilo*/
+
         
         initComponents();
         setTitle("Introduzca nombres...");

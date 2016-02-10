@@ -6,9 +6,6 @@
 package GUI;
 
 import NapakalakiGame.Prize;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 /**
  *
@@ -23,15 +20,7 @@ public class PrizeView extends javax.swing.JPanel {
     private Prize prizeModel ;
     
     public PrizeView() {
-        //Inicio estilo 
-     /*   try {
-            // Set cross-platform Java L&F (also called "Metal")
-        UIManager.setLookAndFeel(new NimbusLookAndFeel());
-        } 
-        catch (UnsupportedLookAndFeelException e) {
-        // handle exception
-        }*/
-        //Fin inicio estilo
+
         initComponents();
     }
 

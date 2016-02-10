@@ -7,9 +7,7 @@ package GUI;
 
 import NapakalakiGame.Treasure;
 import java.awt.Color;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+
 
 /**
  *
@@ -24,15 +22,7 @@ public class TreasureView extends javax.swing.JPanel {
     private boolean selected = false;
     
     public TreasureView() {
-      /*  //Inicio estilo 
-        try {
-        // Set cross-platform Java L&F (also called "Metal")
-        UIManager.setLookAndFeel(new NimbusLookAndFeel());
-        } 
-        catch (UnsupportedLookAndFeelException e) {
-        // handle exception
-        }*/
-        //Fin inicio estilo
+      
         initComponents();
     }
 
