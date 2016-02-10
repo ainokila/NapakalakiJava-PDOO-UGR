@@ -11,15 +11,15 @@ import java.lang.*;
  * @author  Jorge G. y Cristian V.
  */
 public class Monster {
-    
+    private String direcionImagen;
     private String name; //Nombre del monstruo.
     private int combatLevel; //Nivel del monstruo.
     private BadConsequence badConse; // Representa el mal rollo del monstruo.
     private Prize price; //Representa el buen rollo del monstruo.
     private int levelChangeAgainstCultistPlayer = 0 ;
 
-    public Monster(String name, int level, BadConsequence bc, Prize price){
-    
+    public Monster(String name, int level, BadConsequence bc, Prize price,String dire){
+        this.direcionImagen = dire;
         this.name = name;
         combatLevel = level;
         badConse = bc;

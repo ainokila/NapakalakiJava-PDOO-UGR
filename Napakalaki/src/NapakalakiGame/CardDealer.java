@@ -91,7 +91,7 @@ private void initMonsterCardDeck(){
        BadConsequence badConsequence3 = new SpecificBadConsequence("EL primordial bostezo contagioso.\n Pierdes el calzado visible.", 0 , new ArrayList(Arrays.asList(TreasureKind.SHOES)), 
                new ArrayList(Arrays.asList()) );
        Prize prize3 = new Prize(1,1);
-       unusedMonster.add(new Monster("Chibithulhu", 2, badConsequence3, prize3));
+       unusedMonster.add(new Monster("El sopor de Dowic", 2, badConsequence3, prize3));
        
        //Monstruo 4******************************************************************
        BadConsequence badConsequence4 = new SpecificBadConsequence("Te atrapan para llevarte a la fiesta\n y te dejan caer en mitad del vuelo.\n Descarta 1 mano visible  y 1 mano oculta.",
