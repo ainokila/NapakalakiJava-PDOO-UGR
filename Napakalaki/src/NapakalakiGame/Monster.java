@@ -27,8 +27,8 @@ public class Monster {
         
     }
      
-    public Monster(String name, int level, BadConsequence bc, Prize price, int IC){
-    
+    public Monster(String name, int level, BadConsequence bc, Prize price, int IC,String dire){
+        this.direcionImagen = dire;
         this.name = name;
         combatLevel = level;
         badConse = bc;
@@ -37,6 +37,9 @@ public class Monster {
         
     }
      
+    public String getDireccion() {
+        return direcionImagen;
+    }
              
     public String getName() {
         return name;

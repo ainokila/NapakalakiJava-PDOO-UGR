@@ -6,6 +6,9 @@
 package GUI;
 
 import NapakalakiGame.Monster;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -149,6 +152,10 @@ public class MonsterView extends javax.swing.JPanel {
         levelChange.setText(Integer.toString(m.getCombatLevelAgainstCultistPlayer()));
         badConsequenceView1.setBadConsequence(m.getBadConsequence());
         prizeView1.setPrize(m.getPrize());
+        
+        ImageIcon i = new ImageIcon(monstruo.getDireccion());
+        Icon icono = new ImageIcon(i.getImage().getScaledInstance(imagen.getWidth(), imagen.getHeight(), Image.SCALE_DEFAULT));
+        imagen.setIcon(icono);
         
         repaint();      
         
