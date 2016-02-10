@@ -193,8 +193,8 @@ public class NapakalakiView extends javax.swing.JFrame {
         CombatResult r = napakalakiModel.getCurrentPlayer().combat(napakalakiModel.getCurrentMonster());
         //r = CombatResult.LOSEANDCONVERT;
         if(r == CombatResult.WIN){
-           playerView1.setPlayer(napakalakiModel.getCurrentPlayer());
            resultadoCombat.setText("¡Has ganado el combate!");
+           playerView1.setPlayer(napakalakiModel.getCurrentPlayer());
         }else if(r == CombatResult.LOSE){
             resultadoCombat.setText("¡Has perdido el combate! :(");
         }else if(r == CombatResult.LOSEANDCONVERT){
