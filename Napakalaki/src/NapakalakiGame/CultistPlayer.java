@@ -78,4 +78,8 @@ public class CultistPlayer extends Player{
         return totalCultistPlayers;
     }
     
+    @Override    
+    public boolean esSectario(){
+        return true;
+    }
 }

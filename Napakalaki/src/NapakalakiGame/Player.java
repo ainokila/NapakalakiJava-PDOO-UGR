@@ -22,6 +22,7 @@ public class Player {
  private ArrayList<Treasure> visibleTreasures = new ArrayList();
  protected Player enemy;
  private BadConsequence pendingBadConsequence = new NumericBadConsequence("",0,0,0);
+ private boolean esSectario = false;
  
  
  public Player (String nombre){
@@ -52,7 +53,6 @@ public class Player {
  protected boolean shouldConvert(){
      int dado = Dice.getInstance().nextNumber();
      boolean sol = false;
-     System.out.print(dado);
      if(dado == 1){
          sol = true;
      }
@@ -469,12 +469,14 @@ public class Player {
           dieIfNoTreasures();
           
           if(this.shouldConvert()){
+             esSectario = true;
              combatResult = CombatResult.LOSEANDCONVERT; 
+             
           }else{
             combatResult = CombatResult.LOSE;
           }
       }
-      
+
       return combatResult;
       
   }
@@ -488,7 +490,10 @@ public class Player {
           hiddenTreasures.remove(t);
       }
   }
+  
+  public boolean esSectario(){
+    return esSectario;
+  }
+  
 }
-
-
 

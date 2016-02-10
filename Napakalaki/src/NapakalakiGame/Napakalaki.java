@@ -145,7 +145,8 @@ public CombatResult developCombat(){
     CombatResult combatResult = currentPlayer.combat(m);
     
     if(combatResult == CombatResult.LOSEANDCONVERT){
-        
+       
+       
        Cultist nueva =  dealer.nextCultist();
        CultistPlayer nuevoJ = new CultistPlayer(currentPlayer, nueva);
        int posicion = players.indexOf(currentPlayer);

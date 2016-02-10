@@ -44,6 +44,7 @@ public class PlayerNamesCapture extends javax.swing.JDialog {
         //Fin inicio estilo*/
         
         initComponents();
+        setTitle("Introduzca nombres...");
         this.addWindowListener (new WindowAdapter() {
             @Override
                 public void windowClosing (WindowEvent e) {
