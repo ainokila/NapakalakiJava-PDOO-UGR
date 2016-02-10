@@ -7,28 +7,11 @@ package GUI;
 
 
 import NapakalakiGame.*;
-import java.applet.Applet;
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import javafx.scene.media.AudioClip;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.sound.sampled.FloatControl;
 import javax.swing.JOptionPane;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.nimbus.NimbusLookAndFeel;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-import sun.audio.ContinuousAudioDataStream;
 
 
 /**
@@ -45,11 +28,6 @@ public class NapakalakiView extends javax.swing.JFrame {
 
        initComponents();
        try{
-      /*
-      String sonido = "./src/monsters/fondo.wav";
-      InputStream in = new FileInputStream(sonido);
-      AudioStream audio = new AudioStream(in);
-      AudioPlayer.player.start(audio);*/
       
       AudioInputStream i = AudioSystem.getAudioInputStream(new File("./src/monsters/fondo.wav"));
       Clip clip = AudioSystem.getClip();
