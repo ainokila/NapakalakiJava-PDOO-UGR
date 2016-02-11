@@ -8,9 +8,12 @@ package GUI;
 
 import NapakalakiGame.*;
 import java.io.File;
+import java.io.IOException;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JOptionPane;
 
 
@@ -35,11 +38,11 @@ public class NapakalakiView extends javax.swing.JFrame {
       clip.loop(Clip.LOOP_CONTINUOUSLY);
 
        }
-    catch(Exception e)
-    {
-      System.err.println(e);
-    }
-    setTitle("Napakalaki");
+        catch(UnsupportedAudioFileException | IOException | LineUnavailableException e)
+        {
+             System.err.println(e);
+        }
+        this.setTitle("Napakalaki");
         
      
         

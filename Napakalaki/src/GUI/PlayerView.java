@@ -12,7 +12,6 @@ import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 /**
  *
@@ -29,6 +28,7 @@ public class PlayerView extends javax.swing.JPanel {
     public PlayerView() {
 
         initComponents();
+        
     }
 
     /**
