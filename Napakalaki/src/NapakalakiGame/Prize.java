@@ -11,7 +11,7 @@ import java.lang.*;
  * @author Jorge G. y Cristian V.
  */
 public class Prize {
-    
+      
       private int treasures;
       private int level;
       

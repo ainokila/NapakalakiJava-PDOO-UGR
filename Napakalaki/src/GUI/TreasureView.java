@@ -7,6 +7,9 @@ package GUI;
 
 import NapakalakiGame.Treasure;
 import java.awt.Color;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 
 /**
@@ -35,6 +38,11 @@ public class TreasureView extends javax.swing.JPanel {
         this.name.setText(treasureModel.getName());
         this.bonus.setText(Integer.toString(treasureModel.getBonus()));
         this.type.setText(treasureModel.getType().toString());
+        
+        ImageIcon i = new ImageIcon(treasureModel.getDire());
+        System.out.println(treasureModel.getDire());
+        Icon icono = new ImageIcon(i.getImage().getScaledInstance(img1.getWidth()+58, img1.getHeight()+58, Image.SCALE_DEFAULT));
+        img1.setIcon(icono);
         repaint();
         
     }
@@ -54,6 +62,7 @@ public class TreasureView extends javax.swing.JPanel {
         name = new javax.swing.JLabel();
         bonus = new javax.swing.JLabel();
         type = new javax.swing.JLabel();
+        img1 = new javax.swing.JLabel();
 
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -74,25 +83,26 @@ public class TreasureView extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(bonus, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(type, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(img1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addComponent(img1, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(name)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(type)
-                    .addComponent(bonus))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(bonus)
+                    .addComponent(type)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -113,6 +123,7 @@ public class TreasureView extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bonus;
+    private javax.swing.JLabel img1;
     private javax.swing.JLabel name;
     private javax.swing.JLabel type;
     // End of variables declaration//GEN-END:variables

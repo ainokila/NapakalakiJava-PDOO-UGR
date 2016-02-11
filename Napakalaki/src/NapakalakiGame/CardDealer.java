@@ -40,38 +40,37 @@ private CardDealer(){
 }
 private void initTreasureCardDeck(){
     
-        unusedTreasures.add(new Treasure("¡Si mi amo!", 4,TreasureKind.HELMET));
-        unusedTreasures.add(new Treasure("Botas de investigación",3, TreasureKind.SHOES));
-        unusedTreasures.add(new Treasure("Capucha de Cthulhu",3, TreasureKind.HELMET));
-        unusedTreasures.add(new Treasure("A prueba de babas",  2,  TreasureKind.ARMOR));
-        unusedTreasures.add(new Treasure("Botas de lluvia ácida", 1,  TreasureKind.BOTHHANDS));
-        unusedTreasures.add(new Treasure("Casco minero",  2,  TreasureKind.HELMET));
-        unusedTreasures.add(new Treasure("Ametralladora Thompson",  4, TreasureKind.BOTHHANDS));
-        unusedTreasures.add(new Treasure("Camiseta de la UGR",  1,  TreasureKind.ARMOR));
-        unusedTreasures.add(new Treasure("Clavo de rail ferroviario", 3, TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("Cuchillo de sushi arcano",2, TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("Fez alópodo",  3, TreasureKind.HELMET));
-        unusedTreasures.add(new Treasure("Hacha prehistórica",  2, TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("El aparato del Pr. Tesla",  4,  TreasureKind.ARMOR));
-        unusedTreasures.add(new Treasure("Gaita", 4,  TreasureKind.BOTHHANDS));
-        unusedTreasures.add(new Treasure("Insecticida",  2,  TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("Escopeta de 3 cañones",  4, TreasureKind.BOTHHANDS));
-        unusedTreasures.add(new Treasure("Garabato Mistico",  2,  TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("La fuerza de Mr. T",  0,  TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("La rebeca metálica", 2, TreasureKind.ARMOR));
-        unusedTreasures.add(new Treasure("Mazo de los antiguos",  3,  TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("Necro-playboycon",  3, TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("Lanzallamas", 4,  TreasureKind.BOTHHANDS));
-        unusedTreasures.add(new Treasure("Necro-comicón",  1, TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("Necronomicón", 5,  TreasureKind.BOTHHANDS));
-        unusedTreasures.add(new Treasure("Linterna a 2 manos",  3,  TreasureKind.BOTHHANDS));
-        unusedTreasures.add(new Treasure("Necro-gnomicón",  2,  TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("Necrotelecom",  2,  TreasureKind.HELMET));
-        unusedTreasures.add(new Treasure("Porra preternatural", 2, TreasureKind.ONEHAND));
-        unusedTreasures.add(new Treasure("Tentácula de pega",  0, TreasureKind.HELMET));
-        unusedTreasures.add(new Treasure("Zapato deja-amigos", 0, TreasureKind.SHOES));
-        unusedTreasures.add(new Treasure("Shogulador", 1, TreasureKind.BOTHHANDS));
-        unusedTreasures.add(new Treasure("Varita de atizamiento",  3, TreasureKind.ONEHAND));
+        unusedTreasures.add(new Treasure("¡Si mi amo!", 4,TreasureKind.HELMET,"src/treasures/1.jpg"));
+        unusedTreasures.add(new Treasure("Botas de investigación",3, TreasureKind.SHOES,"src/treasures/2.jpg"));
+        unusedTreasures.add(new Treasure("Capucha de Cthulhu",3, TreasureKind.HELMET,"src/treasures/3.jpg"));
+        unusedTreasures.add(new Treasure("A prueba de babas",  2,  TreasureKind.ARMOR,"src/treasures/4.jpg"));
+        unusedTreasures.add(new Treasure("Botas de lluvia ácida", 1,  TreasureKind.BOTHHANDS,"src/treasuress/5.jpg"));
+        unusedTreasures.add(new Treasure("Casco minero",  2,  TreasureKind.HELMET,"src/treasures/7.jpg"));
+        unusedTreasures.add(new Treasure("Ametralladora Thompson",  4, TreasureKind.BOTHHANDS,"src/treasures/8.jpg"));
+        unusedTreasures.add(new Treasure("Camiseta de la UGR",  1,  TreasureKind.ARMOR,"src/treasures/8.jpg"));
+        unusedTreasures.add(new Treasure("Clavo de rail ferroviario", 3, TreasureKind.ONEHAND,"src/treasures/9.jpg"));
+        unusedTreasures.add(new Treasure("Cuchillo de sushi arcano",2, TreasureKind.ONEHAND,"src/treasures/10.jpg"));
+        unusedTreasures.add(new Treasure("Fez alópodo",  3, TreasureKind.HELMET,"src/treasures/11.jpg"));
+        unusedTreasures.add(new Treasure("Hacha prehistórica",  2, TreasureKind.ONEHAND,"src/treasures/12.jpg"));
+        unusedTreasures.add(new Treasure("El aparato del Pr. Tesla",  4,  TreasureKind.ARMOR,"src/treasures/13.jpg"));
+        unusedTreasures.add(new Treasure("Gaita", 4,  TreasureKind.BOTHHANDS,"src/treasures/14.jpg"));
+        unusedTreasures.add(new Treasure("Insecticida",  2,  TreasureKind.ONEHAND,"src/treasures/15.jpg"));
+        unusedTreasures.add(new Treasure("Escopeta de 3 cañones",  4, TreasureKind.BOTHHANDS,"src/treasures/16.jpg"));
+        unusedTreasures.add(new Treasure("Garabato Mistico",  2,  TreasureKind.ONEHAND,"src/treasures/17.jpg"));
+        unusedTreasures.add(new Treasure("La rebeca metálica", 2, TreasureKind.ARMOR,"src/treasures/19.jpg"));
+        unusedTreasures.add(new Treasure("Mazo de los antiguos",  3,  TreasureKind.ONEHAND,"src/treasures/20.jpg"));
+        unusedTreasures.add(new Treasure("Necro-playboycon",  3, TreasureKind.ONEHAND,"src/treasures/21.jpg"));
+        unusedTreasures.add(new Treasure("Lanzallamas", 4,  TreasureKind.BOTHHANDS,"src/treasures/22.jpg"));
+        unusedTreasures.add(new Treasure("Necro-comicón",  1, TreasureKind.ONEHAND,"src/treasures/23.jpg"));
+        unusedTreasures.add(new Treasure("Necronomicón", 5,  TreasureKind.BOTHHANDS,"src/treasures/24.jpg"));
+        unusedTreasures.add(new Treasure("Linterna a 2 manos",  3,  TreasureKind.BOTHHANDS,"src/treasures/25.jpg"));
+        unusedTreasures.add(new Treasure("Necro-gnomicón",  2,  TreasureKind.ONEHAND,"src/treasures/26.jpg"));
+        unusedTreasures.add(new Treasure("Necrotelecom",  2,  TreasureKind.HELMET,"src/treasures/27.jpg"));
+        unusedTreasures.add(new Treasure("Porra preternatural", 2, TreasureKind.ONEHAND,"src/treasures/28.jpg"));
+        unusedTreasures.add(new Treasure("Tentácula de pega",  0, TreasureKind.HELMET,"src/treasures/29.jpg"));
+        unusedTreasures.add(new Treasure("Zapato deja-amigos", 0, TreasureKind.SHOES,"src/treasures/30.jpg"));
+        unusedTreasures.add(new Treasure("Shogulador", 1, TreasureKind.BOTHHANDS,"src/treasures/31.jpg"));
+        unusedTreasures.add(new Treasure("Varita de atizamiento",  3, TreasureKind.ONEHAND,"src/treasures/32.jpg"));
     
 }
 private void initMonsterCardDeck(){
