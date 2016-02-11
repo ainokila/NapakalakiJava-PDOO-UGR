@@ -199,6 +199,9 @@ public class NapakalakiView extends javax.swing.JFrame {
            resultadoCombat.setText("¡Has ganado el combate!");
            playerView1.setPlayer(napakalakiModel.getCurrentPlayer());
         }else if(r == CombatResult.LOSE){
+            if(playerView1.verM()){
+            JOptionPane.showMessageDialog(null, "Al morir pierdes todos los tesoros actuales y tu nivel queda fijado en 1."); 
+            }
             resultadoCombat.setText("¡Has perdido el combate! :(");
         }else if(r == CombatResult.LOSEANDCONVERT){
             resultadoCombat.setText("Pierdes y te conviertes jaja");
@@ -212,7 +215,7 @@ public class NapakalakiView extends javax.swing.JFrame {
         if(r == CombatResult.LOSE || r == CombatResult.LOSEANDCONVERT ){
             playerView1.actualizaPending();
         }
-            
+         
         repaint();
     }//GEN-LAST:event_combatActionPerformed
 

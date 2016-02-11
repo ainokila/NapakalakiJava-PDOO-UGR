@@ -362,4 +362,9 @@ public class PlayerView extends javax.swing.JPanel {
     public void actualizaPending(){
         pendingBadConsequenceView1.setPending(playerModel.getPendingBadConsequence());
     }
+    
+    public boolean verM(){
+        boolean m = playerModel.getT();
+        return m;
+    }
 }

@@ -23,7 +23,8 @@ public class Player {
  protected Player enemy;
  private BadConsequence pendingBadConsequence = new NumericBadConsequence("",0,0,0);
  private boolean esSectario = false;
- 
+ private boolean texto = false;
+  
  
  public Player (String nombre){
      
@@ -307,6 +308,7 @@ public class Player {
       
       BadConsequence bad = m.getBadConsequence();
       BadConsequence pendingBad; 
+      boolean actualiza = false;
       
       if(!(bad.isDeath())){
       
@@ -319,11 +321,13 @@ public class Player {
             //Como ya se han perdido los niveles, ahora los vuelvo a poner a 0
                 pendingBad.setLevels(0);
                 this.setPendingBadConsequence(pendingBad);
+                muerto(actualiza);
                 
       }else if(bad.isDeath()){
           //Al morir el jugador, este pierde todos los tesoros de los que dispone (tanto equipados como ocultos)
           //y su nivel quedará fijado en 1.
-         
+          actualiza = true;
+          muerto(actualiza);
           this.decrementLevels(MAXLEVEL);
           
           //Y por último descarto todos los tesoros
@@ -335,9 +339,23 @@ public class Player {
           
           
          }
-         
+        
       }
+  
+  public boolean muerto(boolean mi){
       
+      if(mi==true){
+          texto= true;
+      }else{
+          texto= false;
+      }
+      return texto;
+  }
+  
+  public boolean getT(){
+      return texto;
+  }
+  
   public Treasure stealTreasure(){
       boolean canI = this.canISteal();
       Treasure treasure = null;
