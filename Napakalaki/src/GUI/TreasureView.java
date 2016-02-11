@@ -40,7 +40,6 @@ public class TreasureView extends javax.swing.JPanel {
         this.type.setText(treasureModel.getType().toString());
         
         ImageIcon i = new ImageIcon(treasureModel.getDire());
-        System.out.println(treasureModel.getDire());
         Icon icono = new ImageIcon(i.getImage().getScaledInstance(img1.getWidth()+58, img1.getHeight()+58, Image.SCALE_DEFAULT));
         img1.setIcon(icono);
         repaint();
