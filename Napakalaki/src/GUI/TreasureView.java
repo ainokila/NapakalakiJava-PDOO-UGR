@@ -111,7 +111,7 @@ public class TreasureView extends javax.swing.JPanel {
              
        if (!isSelected()){
            selected = true;
-           setBackground(Color.blue);
+           setBackground(Color.green);
            setOpaque(selected);
        }else{
           selected = false;
