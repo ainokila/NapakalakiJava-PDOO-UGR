@@ -226,7 +226,7 @@ public class NapakalakiView extends javax.swing.JFrame {
             repaint();
             
         }else{
-            JOptionPane.showMessageDialog(null, "¡¡Debes cumplir el mal rollo!! o ¡Muchos tesoros!");
+            JOptionPane.showMessageDialog(null, "¡¡Debes cumplir el mal rollo o descartar tesoros!!");
         }
     }//GEN-LAST:event_nextTurnActionPerformed
 
