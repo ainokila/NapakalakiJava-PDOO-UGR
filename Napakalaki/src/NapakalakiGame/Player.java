@@ -1,8 +1,20 @@
-//*
- /*To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*
+Copyright 2016 Cristian Velez Ruiz universidadcvr@gmail.com
+Copyright 2016 Jorge Gutierrez Segovia
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>. 
+*/
 package NapakalakiGame;
 
 import GUI.Dice;
@@ -15,7 +27,7 @@ public class Player {
     
  private static final int MAXLEVEL = 10;
  private String name;
- private int level;
+ protected int level;
  private boolean dead = true;
  private boolean canISteal = true;
  private ArrayList<Treasure> hiddenTreasures = new ArrayList();
@@ -24,6 +36,7 @@ public class Player {
  private BadConsequence pendingBadConsequence = new NumericBadConsequence("",0,0,0);
  private boolean esSectario = false;
  private boolean texto = false;
+ protected boolean subidaRealizada = false;
   
  
  public Player (String nombre){
@@ -46,6 +59,30 @@ public class Player {
      pendingBadConsequence = p.pendingBadConsequence;
      
  }
+  //Inicio examen 
+  
+ 
+  public boolean SubirNivel(Treasure visible, Treasure oculto){
+      boolean subida = false;
+      
+      if(visible.getType() != oculto.getType() && level+2 < 10){
+          subida=true;
+          
+          this.discardVisibleTreasure(visible);
+          this.discardHiddenTreasure(oculto);
+          level = level +2;
+          subidaRealizada=true;
+      }
+      
+      
+      return subida;
+  }
+  
+  public boolean getSubidaRealizada(){
+      return this.subidaRealizada;
+  }
+  
+  //Fin examen
   
  protected int getOponentLevel(Monster m ){
      return m.getCombatLevel();
@@ -108,7 +145,7 @@ public class Player {
      dead = false;
  }
  
- private int getLevelTreasures(){
+ protected int getLevelTreasures(){
      
      int solucion  = 0;
      
@@ -180,7 +217,23 @@ public class Player {
      return level;
  }
  
-  private int howManyVisibleTreasures(TreasureKind tKind){
+  protected int howManyVisibleTreasures(TreasureKind tKind){
+      
+      int solucion = 0;
+      
+       for (Treasure iterador: visibleTreasures){
+            
+            if(iterador.getType() == tKind){
+                
+                solucion++;
+                
+            }
+    }
+     
+     return solucion; 
+  }
+  
+    protected int howManyHiddenTreasures(TreasureKind tKind){
       
       int solucion = 0;
       
@@ -226,7 +279,7 @@ public class Player {
   }
   
   
-  private boolean canMakeTreasureVisible(Treasure t){
+  public boolean canMakeTreasureVisible(Treasure t){
       
       boolean solucion=true;
       

@@ -1,8 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+Copyright 2016 Cristian Velez Ruiz universidadcvr@gmail.com
+Copyright 2016 Jorge Gutierrez Segovia
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>. 
+*/
 package GUI;
 
 
@@ -60,6 +72,7 @@ public class NapakalakiView extends javax.swing.JFrame {
         combat.setVisible(false);
         nextTurn.setVisible(false);
         resultadoCombat.setText("");
+        playerView1.cambiarVisibilidadSubir(false);
         repaint();
 }
 
@@ -215,6 +228,12 @@ public class NapakalakiView extends javax.swing.JFrame {
         if(r == CombatResult.LOSE || r == CombatResult.LOSEANDCONVERT ){
             playerView1.actualizaPending();
         }
+        
+        //Inicio Examen
+        if(!napakalakiModel.getCurrentPlayer().getSubidaRealizada() && r == CombatResult.WIN ){
+            playerView1.cambiarVisibilidadSubir(true);
+        }
+        //Fin examen
          
         repaint();
     }//GEN-LAST:event_combatActionPerformed

@@ -1,8 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+Copyright 2016 Cristian Velez Ruiz universidadcvr@gmail.com
+Copyright 2016 Jorge Gutierrez Segovia
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>. 
+*/
 package NapakalakiGame;
 import java.util.ArrayList;
 import java.util.Random;
@@ -29,12 +41,19 @@ public static Napakalaki getInstance() {
 }
         
 private void initPlayers(ArrayList<String> names){
+    //Inicio examen
     players = new ArrayList();
+    int i = 0;
    for(String iterador : names){
-       players.add(new Player(iterador));
+       if(i==0){
+            players.add(new PlayerMiope(iterador));
+       }else{
+           players.add(new Player(iterador));
+       }
+       i++;
    }
     currentPlayer = nextPlayer();
-   
+   //Fin examen
 }
 private Player nextPlayer(){
         Player aux;
