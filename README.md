@@ -1,4 +1,4 @@
-# Napakalaki verion in Java of Munchkin
+# Napakalaki version in Java of Munchkin Game
 ![Cartas del Juego](https://www.jugonesweb.com/wp-content/uploads/2015/11/munchkin-cartas.jpg)
 
 Napakalaki game with graphics interface , is a version of [munchkin](http://www.worldofmunchkin.com/).
